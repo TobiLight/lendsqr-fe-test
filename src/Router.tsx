@@ -1,5 +1,6 @@
 import { createBrowserRouter, Link } from "react-router-dom";
-
+import LoginPage from "./Pages/Login";
+import './Styles/global.scss'
 
 const AppRouter = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ const AppRouter = createBrowserRouter([
             </div>
         ),
     },
+    {
+        path: '/login',
+        element: <LoginPage />
+    }
 ]);
 
 export default AppRouter
