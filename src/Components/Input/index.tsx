@@ -1,10 +1,13 @@
-import React from "react";
+import React, { ChangeEventHandler } from "react";
 
-type Props = Partial<HTMLInputElement>
+type Props = Partial<HTMLInputElement> & {
+    ariaLabel: string | undefined
+    handleChange: ChangeEventHandler<HTMLInputElement> | undefined
+}
 
-const Input = ({ autofocus, type, name, className, id, placeholder }: Props): JSX.Element => {
+const Input = ({ ariaLabel, autofocus, type, name, className, id, placeholder, required, value, handleChange }: Props): JSX.Element => {
     return (
-        <input autoFocus={autofocus} type={type} name={name} id={id} className={className} placeholder={placeholder} />
+        <input aria-label={ariaLabel} required={required} autoFocus={autofocus} type={type} name={name} id={id} className={className} placeholder={placeholder} value={value} onChange={handleChange} />
     )
 }
 

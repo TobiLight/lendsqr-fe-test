@@ -1,18 +1,18 @@
 @mixin screenbreakpoint($size) {
   @if $size == "mobile" {
-    @media (max-width: 599px) {
+    @media (max-width: 899px) {
       @content;
     }
   } @else if $size == "tablet-portrait-up" {
-    @media (min-width: 600px) and (max-width: 899px) {
+    @media (min-width: 900px) and (max-width: 900px) {
       @content;
     }
   } @else if $size == "tablet-landscape-up" {
-    @media (min-width: 900px) {
+    @media (min-width: 900px) and (max-width: 1024px) {
       @content;
     }
   } @else if $size == "desktop" {
-    @media (min-width: 1024px) and (max-width: 1439px) {
+    @media (min-width: 1024px) and (max-width: 1440px) {
       @content;
     }
   } @else if $size == "big-desktop" {

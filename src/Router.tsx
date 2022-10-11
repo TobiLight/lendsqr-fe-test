@@ -1,4 +1,5 @@
-import { createBrowserRouter, Link } from "react-router-dom";
+import axios from "axios";
+import { createBrowserRouter, json, Link } from "react-router-dom";
 import LoginPage from "./Pages/Login";
 import './Styles/global.scss'
 
@@ -25,7 +26,24 @@ const AppRouter = createBrowserRouter([
     },
     {
         path: '/login',
-        element: <LoginPage />
+        element: <LoginPage />,
+        action: async ({ request }) => {
+            console.log(localStorage.getItem('deletedID'))
+            let form = await request.formData()
+            let email = form.get('email')
+            console.log(email)
+        },
+        loader: async ({ request }) => {
+            const usersFromLS = JSON.parse(JSON.stringify(localStorage.getItem('users'))) as [{ id: string | number }]
+
+            if (usersFromLS.length > 0) {
+                localStorage.removeItem('users')
+            }
+
+            let users = await axios.get('https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users')
+            localStorage.setItem('users', { ...users.data })
+            return json({ users: users.data })
+        }
     }
 ]);
 
