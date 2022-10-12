@@ -24,7 +24,7 @@ export default function LoginComponent() {
         <div className={styles.container}>
             <div className={styles.wrapper}>
                 <div className={styles.logo}>
-                    <img src={logo} alt="Lendsqr Logo" className='' />
+                    <img src={logo} alt="Lendsqr Logo" />
                 </div>
                 <div className={styles.main}>
                     <div className={styles.loginLeft}>

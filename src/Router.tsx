@@ -1,5 +1,6 @@
 import axios from "axios";
 import { createBrowserRouter, json, Link } from "react-router-dom";
+import DashboardPage from "./Pages/Dashboard";
 import LoginPage from "./Pages/Login";
 import './Styles/global.scss'
 
@@ -44,6 +45,10 @@ const AppRouter = createBrowserRouter([
             localStorage.setItem('users', { ...users.data })
             return json({ users: users.data })
         }
+    },
+    {
+        path: '/dashboard',
+        element: <DashboardPage />
     }
 ]);
 
