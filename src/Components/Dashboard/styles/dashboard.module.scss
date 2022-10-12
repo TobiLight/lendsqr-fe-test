@@ -3,6 +3,480 @@
 .main {
     background-color: #f2f2f2;
     min-height: 100vh;
-
     
+    
+    .dashboard {
+        padding: 40px 20px;
+        position: relative;
+        top: 120px;
+        
+        p {
+            font-size: 24px;
+            color: #213F7D;
+            font-weight: 500;
+            margin-bottom: 50px;
+        }
+
+       @media only screen and (max-width: 600px) {
+        .pageNav {
+            display: none;
+        }
+       }
+
+       @media only screen and (min-width: 601px) {
+        .pageNav {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+       }
+
+        @media only screen and (max-width: 900px) {
+            .usersInfo {
+                display: grid;
+                grid-template-columns: auto auto;
+                gap: 20px;
+    
+                .users {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px 0 0px 20px;
+                    height: 160px;
+                    background-color: #fff;
+                    border-radius: 4px;
+                    gap: 30px;
+                    
+                    .userellipseIcon {
+                        width: 40px;
+                        width: 40px;
+                    }
+
+                    .usersStat {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        p {
+                            font-size: 14px;
+                            margin-bottom: 0;
+                        }
+
+                        .usersCount {
+                            font-weight: 500;
+                            font-size: 24px;
+                        }
+                    }
+                }
+                
+                .active {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px 0 0px 20px;
+                    height: 160px;
+                    background-color: #fff;
+                    border-radius: 4px;
+                    gap: 30px;
+
+                    .userellipseIcon2 {
+                        width: 40px;
+                        width: 40px;
+                    }
+
+                    .activeStats {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+
+                        p {
+                            font-size: 14px;
+                            margin-bottom: 0;
+                        }
+
+                        .activeCount {
+                            font-weight: 500;
+                            font-size: 24px;
+                        }
+                    }
+                }
+
+                .usersloans {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px 0 0px 20px;
+                    height: 160px;
+                    background-color: #fff;
+                    border-radius: 4px;
+                    gap: 30px;
+
+                    .loanIcon {
+                        width: 40px;
+                        width: 40px;
+                    }
+
+                    .usersloansStats {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        
+                        p {
+                            font-size: 14px;
+                            margin-bottom: 0;
+                        }
+
+                        .usersloansCount {
+                            font-weight: 500;
+                            font-size: 24px;
+                        }
+                    }
+                }
+
+                .userswithsavings {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px 0 0px 20px;
+                    height: 160px;
+                    background-color: #fff;
+                    border-radius: 4px;
+                    gap: 30px;
+
+                    .savingsIcon {
+                        width: 40px;
+                        width: 40px;
+                    }
+
+                    .userswithsavingsStats {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        
+                        p {
+                            font-size: 14px;
+                            margin-bottom: 0;
+                        }
+
+                        .userswithsavingsCount {
+                            font-weight: 500;
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+
+            .userlistcontainer {
+                .userlistwrapper {
+                    background-color: #fff;
+                    padding: 20px;
+                    margin-top: 40px;
+                    border-radius: 4px;
+    
+                    table {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        overflow-x: scroll;
+    
+                        thead {
+                            width: max-content;
+                            tr {
+                                display: flex;
+                                justify-content: space-between;
+                                width: 100%;
+                                text-align: left;
+                                gap: 20px; 
+                                th {
+                                    width: 200px;
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 10px;
+                                    font-size: 12px;
+                                    font-weight: 500;
+                                    padding: 20px 0;
+                                    margin-bottom: 20px;
+    
+                                    .filterIcon {
+                                        width: 12px;
+                                        height: 12px;
+                                    }
+                                }
+    
+                                th:nth-child(6) {
+                                    width: 130px;
+                                }
+    
+                                th:last-child {
+                                    width: auto;
+                                }
+                            }
+                        }
+    
+                        tbody {
+                            width: max-content;
+                        tr {
+                            display: flex;
+                            justify-content: space-between;
+                            width: max-content;
+                            text-align: left;
+                            gap: 20px;
+                            padding: 20px 0;
+                            border-bottom: 2px solid #eee;
+    
+    
+                            td {
+                                width: 200px;
+                                font-size: 14px;
+                                color: #545F7D;
+                                font-size: 14px;
+    
+                                .moreIcon {
+                                    width: 15px;
+                                    height: 15px;
+                                    cursor: pointer;
+                                }
+                            }
+    
+                            td:nth-child(6) {
+                                width: 130px;
+                            }
+    
+                            td:last-child {
+                                width: auto;
+                            }
+    
+                            .inactive {
+                                width: auto;
+                                padding: 5px 20px;
+                                background-color: #545f7d1a;
+                                color: #545F7D;
+                                border-radius: 20px;
+                            }
+    
+                            .pending {
+                                color: #E9B200;
+                                background-color: #e9b3001d;
+                                width: auto;
+                                padding: 5px 20px;
+                                border-radius: 20px;
+                            }
+    
+                            .active {
+                                color: #39CD62;
+                                background-color: #39cd6323;
+                                width: auto;
+                                padding: 5px 20px;
+                                border-radius: 20px;
+                            }
+    
+                            .blacklisted {
+                                color: #E4033B;
+                                background-color: #e4033b26;
+                                width: auto;
+                                padding: 5px 20px;
+                                border-radius: 20px;
+                            }
+                        }
+                    }
+                    }
+                }
+
+                .resultFilter {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 40px;
+
+                    p { 
+                        margin-bottom: 0;
+                    }
+
+                    select {
+                        width: 80px;
+                        height: 30px;
+                        background: #213f7d26;
+                        color: #213F7D;
+                        border-radius: 4px;
+                        font-weight: 600;
+                        padding: 0 7px;
+                        border-right: 7px solid transparent;
+                    }
+
+                    .displayResults {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        color: #545F7D;
+
+                        p {
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: #545f7da5;
+                        }
+                    }
+
+                    .resultNavigation {
+                        display: flex;
+                        gap: 20px;
+                        align-items: center;
+
+                        .activePageNav {
+                            color: #213F7D;
+                        }
+
+                        a {
+                            text-decoration: none;
+                            color: #545f7da5;
+                        }
+
+                        .btnPrev, .btnNext {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 4px;
+                        background-color: #21407d23;
+
+                        .prev, .next {
+                            width: 15px;
+                            height: 15px;
+                        }
+
+                    }
+
+                        
+                    }
+
+                    
+                }
+            }
+
+            
+        }
+
+        // @media only screen and (min-width: 640px) and (max-width: 900px) {
+        //     .usersInfo {
+        //         display: grid;
+        //         grid-template-columns: auto auto;
+        //         gap: 20px;
+    
+        //         .users {
+        //             display: flex;
+        //             flex-direction: column;
+        //             padding: 20px 0 0px 20px;
+        //             height: 160px;
+        //             background-color: #fff;
+        //             border-radius: 4px;
+        //             gap: 30px;
+                    
+        //             .userellipseIcon {
+        //                 width: 40px;
+        //                 width: 40px;
+        //             }
+
+        //             .usersStat {
+        //                 display: flex;
+        //                 flex-direction: column;
+        //                 gap: 20px;
+        //                 p {
+        //                     font-size: 14px;
+        //                     margin-bottom: 0;
+        //                 }
+
+        //                 .usersCount {
+        //                     font-weight: 500;
+        //                     font-size: 24px;
+        //                 }
+        //             }
+        //         }
+                
+        //         .active {
+        //             display: flex;
+        //             flex-direction: column;
+        //             padding: 20px 0 0px 20px;
+        //             height: 160px;
+        //             background-color: #fff;
+        //             border-radius: 4px;
+        //             gap: 30px;
+
+        //             .userellipseIcon2 {
+        //                 width: 40px;
+        //                 width: 40px;
+        //             }
+
+        //             .activeStats {
+        //                 display: flex;
+        //                 flex-direction: column;
+        //                 gap: 20px;
+
+        //                 p {
+        //                     font-size: 14px;
+        //                     margin-bottom: 0;
+        //                 }
+
+        //                 .activeCount {
+        //                     font-weight: 500;
+        //                     font-size: 24px;
+        //                 }
+        //             }
+        //         }
+
+        //         .usersloans {
+        //             display: flex;
+        //             flex-direction: column;
+        //             padding: 20px 0 0px 20px;
+        //             height: 160px;
+        //             background-color: #fff;
+        //             border-radius: 4px;
+        //             gap: 30px;
+
+        //             .loanIcon {
+        //                 width: 40px;
+        //                 width: 40px;
+        //             }
+
+        //             .usersloansStats {
+        //                 display: flex;
+        //                 flex-direction: column;
+        //                 gap: 20px;
+                        
+        //                 p {
+        //                     font-size: 14px;
+        //                     margin-bottom: 0;
+        //                 }
+
+        //                 .usersloansCount {
+        //                     font-weight: 500;
+        //                     font-size: 24px;
+        //                 }
+        //             }
+        //         }
+
+        //         .userswithsavings {
+        //             display: flex;
+        //             flex-direction: column;
+        //             padding: 20px 0 0px 20px;
+        //             height: 160px;
+        //             background-color: #fff;
+        //             border-radius: 4px;
+        //             gap: 30px;
+
+        //             .savingsIcon {
+        //                 width: 40px;
+        //                 width: 40px;
+        //             }
+
+        //             .userswithsavingsStats {
+        //                 display: flex;
+        //                 flex-direction: column;
+        //                 gap: 20px;
+                        
+        //                 p {
+        //                     font-size: 14px;
+        //                     margin-bottom: 0;
+        //                 }
+
+        //                 .userswithsavingsCount {
+        //                     font-weight: 500;
+        //                     font-size: 24px;
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
+    }
 }

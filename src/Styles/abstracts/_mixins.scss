@@ -21,3 +21,28 @@
     }
   }
 }
+
+@mixin flex-row() {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin flex-gap($gap) {
+  gap: $gap
+}
+
+@mixin justify-center() {
+  justify-content: center;
+}
+
+@mixin items-center() {
+  align-items: center;
+}
+
+@mixin justify-start() {
+  justify-content: start;
+}
+
+@mixin items-start() {
+  align-items: start;
+}
