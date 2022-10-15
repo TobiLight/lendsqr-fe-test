@@ -1,7 +1,7 @@
 import React, { ChangeEventHandler } from "react";
 
 type Props = Partial<HTMLInputElement> & {
-    ariaLabel: string | undefined
+    ariaLabel?: string
     handleChange: ChangeEventHandler<HTMLInputElement> | undefined
 }
 

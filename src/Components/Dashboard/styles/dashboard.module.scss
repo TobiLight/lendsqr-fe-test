@@ -1,4 +1,4 @@
-@import '../../../Styles//abstracts/mixins';
+@import "../../../Styles//abstracts/mixins";
 
 .main {
     background-color: #f2f2f2;
@@ -7,7 +7,7 @@
     .mobile {
         display: none;
     }
-    
+
     @media only screen and (max-width: 900px) {
         .mobile {
             display: block;
@@ -16,78 +16,78 @@
         .desktopHeader {
             display: none;
         }
-    } 
+    }
 
     .dashboard {
         padding: 40px 20px;
         position: relative;
         top: 120px;
 
-        p {
-            font-size: 24px;
-            color: #213F7D;
-            font-weight: 500;
-            margin-bottom: 50px;
+        .dashboardContainer {
+            p {
+                width: 95%;
+                margin: auto;
+                font-size: 24px;
+                color: #213f7d;
+                font-weight: 500;
+            }
         }
 
         .sideMenuDesktop {
             display: none;
         }
 
-       @media only screen and (max-width: 600px) {
-        .pageNav {
-            display: none;
-        }
-       }
-
-       @media only screen and (min-width: 601px) {
-        .pageNav {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-
-            a {
-                font-size: 12px;
+        @media only screen and (max-width: 600px) {
+            .pageNav {
+                display: none;
             }
         }
-       }
 
-       @media only screen and (max-width: 520px) {
-        .usersInfo {
-            grid-template-columns: auto;
+        @media only screen and (min-width: 601px) {
+            .pageNav {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                a {
+                    font-size: 12px;
+                }
+            }
         }
 
-        .userlistcontainer {
-            .userlistwrapper {
-                table {
-                    thead {
-                        tr {
-                            th {
-                                max-width: 150px;
+        @media only screen and (max-width: 520px) {
+            .usersInfo {
+                grid-template-columns: auto;
+            }
+
+            .userlistcontainer {
+                .userlistwrapper {
+                    table {
+                        thead {
+                            tr {
+                                th {
+                                    max-width: 150px;
+                                }
                             }
                         }
-                    }
 
-                    tbody {
-                        tr {
-                            td {
-                                max-width: 150px;
+                        tbody {
+                            tr {
+                                td {
+                                    max-width: 150px;
+                                }
                             }
                         }
                     }
                 }
             }
         }
-       }
 
-       @media only screen and (min-width:500px) and (max-width: 900px) {
-        .usersInfo {
-            grid-template-columns: auto auto;
+        @media only screen and (min-width: 500px) and (max-width: 900px) {
+            .usersInfo {
+                grid-template-columns: auto auto;
+            }
         }
-        
-
-        
-       }
 
         @media only screen and (max-width: 900px) {
             .mobile {
@@ -97,7 +97,7 @@
             .usersInfo {
                 display: grid;
                 gap: 20px;
-    
+
                 .users {
                     display: flex;
                     flex-direction: column;
@@ -106,7 +106,7 @@
                     background-color: #fff;
                     border-radius: 4px;
                     gap: 30px;
-                    
+
                     .userellipseIcon {
                         width: 40px;
                         width: 40px;
@@ -127,7 +127,7 @@
                         }
                     }
                 }
-                
+
                 .active {
                     display: flex;
                     flex-direction: column;
@@ -177,7 +177,7 @@
                         display: flex;
                         flex-direction: column;
                         gap: 20px;
-                        
+
                         p {
                             font-size: 14px;
                             margin-bottom: 0;
@@ -208,7 +208,7 @@
                         display: flex;
                         flex-direction: column;
                         gap: 20px;
-                        
+
                         p {
                             font-size: 14px;
                             margin-bottom: 0;
@@ -228,13 +228,13 @@
                     padding: 20px;
                     margin-top: 40px;
                     border-radius: 4px;
-    
+
                     table {
                         width: 100%;
                         display: flex;
                         flex-direction: column;
                         overflow-x: scroll;
-    
+
                         thead {
                             width: max-content;
                             tr {
@@ -242,7 +242,7 @@
                                 justify-content: space-between;
                                 width: 100%;
                                 text-align: left;
-                                gap: 20px; 
+                                gap: 20px;
                                 th {
                                     width: 200px;
                                     display: flex;
@@ -252,89 +252,88 @@
                                     font-weight: 500;
                                     padding: 20px 0;
                                     margin-bottom: 20px;
-    
+
                                     .filterIcon {
                                         width: 12px;
                                         height: 12px;
                                     }
                                 }
-    
+
                                 th:nth-child(6) {
                                     width: 130px;
                                 }
-    
+
                                 th:last-child {
                                     width: auto;
                                 }
                             }
                         }
-    
+
                         tbody {
                             width: max-content;
-                        tr {
-                            display: flex;
-                            justify-content: space-between;
-                            width: max-content;
-                            text-align: left;
-                            gap: 20px;
-                            padding: 20px 0;
-                            border-bottom: 2px solid #eee;
-    
-    
-                            td {
-                                width: 200px;
-                                font-size: 14px;
-                                color: #545F7D;
-                                font-size: 14px;
-    
-                                .moreIcon {
-                                    width: 15px;
-                                    height: 15px;
-                                    cursor: pointer;
+                            tr {
+                                display: flex;
+                                justify-content: space-between;
+                                width: max-content;
+                                text-align: left;
+                                gap: 20px;
+                                padding: 20px 0;
+                                border-bottom: 2px solid #eee;
+
+                                td {
+                                    width: 200px;
+                                    font-size: 14px;
+                                    color: #545f7d;
+                                    font-size: 14px;
+
+                                    .moreIcon {
+                                        width: 15px;
+                                        height: 15px;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                td:nth-child(6) {
+                                    width: 130px;
+                                }
+
+                                td:last-child {
+                                    width: auto;
+                                }
+
+                                .inactive {
+                                    width: auto;
+                                    padding: 5px 20px;
+                                    background-color: #545f7d1a;
+                                    color: #545f7d;
+                                    border-radius: 20px;
+                                }
+
+                                .pending {
+                                    color: #e9b200;
+                                    background-color: #e9b3001d;
+                                    width: auto;
+                                    padding: 5px 20px;
+                                    border-radius: 20px;
+                                }
+
+                                .active {
+                                    color: #39cd62;
+                                    background-color: #39cd6323;
+                                    width: auto;
+                                    padding: 5px 20px;
+                                    border-radius: 20px;
+                                }
+
+                                .blacklisted {
+                                    color: #e4033b;
+                                    background-color: #e4033b26;
+                                    width: auto;
+                                    padding: 5px 20px;
+                                    border-radius: 20px;
                                 }
                             }
-    
-                            td:nth-child(6) {
-                                width: 130px;
-                            }
-    
-                            td:last-child {
-                                width: auto;
-                            }
-    
-                            .inactive {
-                                width: auto;
-                                padding: 5px 20px;
-                                background-color: #545f7d1a;
-                                color: #545F7D;
-                                border-radius: 20px;
-                            }
-    
-                            .pending {
-                                color: #E9B200;
-                                background-color: #e9b3001d;
-                                width: auto;
-                                padding: 5px 20px;
-                                border-radius: 20px;
-                            }
-    
-                            .active {
-                                color: #39CD62;
-                                background-color: #39cd6323;
-                                width: auto;
-                                padding: 5px 20px;
-                                border-radius: 20px;
-                            }
-    
-                            .blacklisted {
-                                color: #E4033B;
-                                background-color: #e4033b26;
-                                width: auto;
-                                padding: 5px 20px;
-                                border-radius: 20px;
-                            }
                         }
-                    }
                     }
                 }
 
@@ -343,7 +342,7 @@
                     justify-content: space-between;
                     margin-top: 40px;
 
-                    p { 
+                    p {
                         margin-bottom: 0;
                     }
 
@@ -351,7 +350,7 @@
                         width: 80px;
                         height: 30px;
                         background: #213f7d26;
-                        color: #213F7D;
+                        color: #213f7d;
                         border-radius: 4px;
                         font-weight: 600;
                         padding: 0 7px;
@@ -359,16 +358,18 @@
                     }
 
                     .displayResults {
-                        width: 100%;
+                        width: fit-content;
                         display: flex;
                         align-items: center;
                         gap: 10px;
-                        color: #545F7D;
+                        color: #545f7d;
 
                         p {
                             font-size: 16px;
                             font-weight: 500;
                             color: #545f7da5;
+                            margin: 0;
+                            width: max-content;
                         }
                     }
 
@@ -378,7 +379,7 @@
                         align-items: center;
 
                         .activePageNav {
-                            color: #213F7D;
+                            color: #213f7d;
                         }
 
                         a {
@@ -386,30 +387,24 @@
                             color: #545f7da5;
                         }
 
-                        .btnPrev, .btnNext {
-                        width: 30px;
-                        height: 30px;
-                        border-radius: 4px;
-                        background-color: #21407d23;
+                        .btnPrev,
+                        .btnNext {
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 4px;
+                            background-color: #21407d23;
 
-                        .prev, .next {
-                            width: 15px;
-                            height: 15px;
+                            .prev,
+                            .next {
+                                width: 15px;
+                                height: 15px;
+                            }
                         }
-
                     }
-
-                        
-                    }
-
-                    
                 }
             }
-
-            
         }
     }
-    
 }
 
 @media only screen and (min-width: 900px) and (max-width: 1440px) {
@@ -424,8 +419,7 @@
             padding: 0;
             overflow: auto;
             grid-template-areas: "sideMenuDesktop dashboardContainer";
-            
-            
+
             .dashboardContainer {
                 width: 100%;
                 overflow: hidden;
@@ -433,12 +427,6 @@
                 overflow-y: scroll;
                 padding-top: 40px;
                 padding-bottom: 70px;
-
-                p {
-                    width: 95%;
-                    margin: auto;
-                    margin-bottom: 50px;
-                }
             }
 
             .usersInfo {
@@ -448,8 +436,7 @@
                 width: 95%;
                 margin: auto;
                 margin-bottom: 50px;
-                
-    
+
                 .users {
                     display: flex;
                     flex-direction: column;
@@ -458,7 +445,7 @@
                     background-color: #fff;
                     border-radius: 4px;
                     gap: 30px;
-                    
+
                     .userellipseIcon {
                         width: 40px;
                         width: 40px;
@@ -479,7 +466,7 @@
                         }
                     }
                 }
-                
+
                 .active {
                     display: flex;
                     flex-direction: column;
@@ -529,7 +516,7 @@
                         display: flex;
                         flex-direction: column;
                         gap: 20px;
-                        
+
                         p {
                             font-size: 14px;
                             margin-bottom: 0;
@@ -560,7 +547,7 @@
                         display: flex;
                         flex-direction: column;
                         gap: 20px;
-                        
+
                         p {
                             font-size: 14px;
                             margin-bottom: 0;
@@ -574,14 +561,11 @@
                 }
             }
 
-          
-
             @media only screen and (min-width: 900px) and (max-width: 1024px) {
                 .usersInfo {
                     grid-template-columns: 2fr 2fr;
                 }
             }
-
 
             .userlistcontainer {
                 width: 95%;
@@ -592,13 +576,14 @@
                     padding: 20px;
                     margin-top: 40px;
                     border-radius: 4px;
-    
+
                     table {
                         width: 100%;
                         display: flex;
                         flex-direction: column;
                         overflow-x: scroll;
-    
+                        position: relative;
+
                         thead {
                             width: max-content;
                             tr {
@@ -606,7 +591,7 @@
                                 justify-content: space-between;
                                 width: 100%;
                                 text-align: left;
-                                gap: 20px; 
+                                gap: 20px;
                                 th {
                                     max-width: 125px;
                                     width: 125px;
@@ -617,94 +602,228 @@
                                     font-weight: 500;
                                     padding: 20px 0;
                                     margin-bottom: 20px;
-    
+
                                     .filterIcon {
                                         width: 12px;
                                         height: 12px;
+                                        cursor: pointer;
                                     }
                                 }
-    
+
                                 th:nth-child(6) {
                                     max-width: 125px;
+                                    cursor: none;
                                 }
-    
+
                                 th:last-child {
                                     max-width: 125px;
                                     width: auto;
                                 }
                             }
                         }
-    
+
                         tbody {
                             width: max-content;
-                        tr {
-                            display: flex;
-                            justify-content: space-between;
-                            width: max-content;
-                            text-align: left;
-                            gap: 20px;
-                            padding: 20px 0;
-                            border-bottom: 2px solid #eee;
-    
-    
-                            td {
-                                max-width: 125px;
-                                width: 125px;
-                                color: #545F7D;
-                                font-size: 14px;
-    
-                                .moreIcon {
-                                    width: 15px;
-                                    height: 15px;
-                                    cursor: pointer;
+                            tr {
+                                display: flex;
+                                justify-content: space-between;
+                                width: max-content;
+                                text-align: left;
+                                gap: 20px;
+                                padding: 20px 0;
+                                border-bottom: 2px solid #eee;
+
+                                td {
+                                    max-width: 125px;
+                                    width: 125px;
+                                    color: #545f7d;
+                                    font-size: 14px;
+
+                                    .moreIcon {
+                                        width: 15px;
+                                        height: 15px;
+                                        cursor: pointer;
+                                    }
+                                }
+
+                                td:nth-child(3) {
+                                    word-break: break-all;
+                                }
+
+                                td:nth-child(6) {
+                                    max-width: 125px;
+                                }
+
+                                td:last-child {
+                                    width: auto;
+                                }
+
+                                .inactive {
+                                    width: auto;
+                                    padding: 5px 20px;
+                                    background-color: #545f7d1a;
+                                    color: #545f7d;
+                                    border-radius: 20px;
+                                }
+
+                                .pending {
+                                    color: #e9b200;
+                                    background-color: #e9b3001d;
+                                    width: auto;
+                                    padding: 5px 20px;
+                                    border-radius: 20px;
+                                }
+
+                                .active {
+                                    color: #39cd62;
+                                    background-color: #39cd6323;
+                                    width: auto;
+                                    padding: 5px 20px;
+                                    border-radius: 20px;
+                                }
+
+                                .blacklisted {
+                                    color: #e4033b;
+                                    background-color: #e4033b26;
+                                    width: auto;
+                                    padding: 5px 20px;
+                                    border-radius: 20px;
                                 }
                             }
+                        }
 
-                            td:nth-child(3) {
-                                word-break: break-all;
-                            }
-    
-                            td:nth-child(6) {
-                                max-width: 125px;
-                            }
-    
-                            td:last-child {
-                                width: auto;
-                            }
-    
-                            .inactive {
-                                width: auto;
-                                padding: 5px 20px;
-                                background-color: #545f7d1a;
-                                color: #545F7D;
-                                border-radius: 20px;
-                            }
-    
-                            .pending {
-                                color: #E9B200;
-                                background-color: #e9b3001d;
-                                width: auto;
-                                padding: 5px 20px;
-                                border-radius: 20px;
-                            }
-    
-                            .active {
-                                color: #39CD62;
-                                background-color: #39cd6323;
-                                width: auto;
-                                padding: 5px 20px;
-                                border-radius: 20px;
-                            }
-    
-                            .blacklisted {
-                                color: #E4033B;
-                                background-color: #e4033b26;
-                                width: auto;
-                                padding: 5px 20px;
-                                border-radius: 20px;
+                        .tableFilter {
+                            position: absolute;
+                            width: 209px;
+                            background: rgb(255, 255, 255);
+                            padding: 20px;
+                            top: 55px;
+                            box-shadow: 0px 0px 7px 0px #eeeeee80;
+                            filter: drop-shadow(0px 0px 0px #33333336);
+                            border-radius: 4px;
+                            left: 0px;
+                            border: 1px solid #545f7d2b;
+                            display: grid;
+                            gap: 30px;
+
+                            form {
+                                display: grid;
+                                gap: 25px;
+                                position: relative;
+
+                                .organization,
+                                .status {
+                                    position: relative;
+                                    p {
+                                        margin: 0;
+                                        margin-bottom: 10px;
+                                        font-size: 14px;
+                                        color: #545f7d;
+                                    }
+
+                                    label {
+                                        select {
+                                            border: 1px solid #21407d7c;
+                                            width: 100%;
+                                            padding: 10px 15px;
+                                            border-radius: 8px;
+                                            background: transparent;
+                                            -webkit-appearance: none;
+                                            appearance: none;
+                                            position: relative;
+                                            z-index: 1;
+                                            color: #545f7d;
+                                            opacity: 0.5;
+
+                                            &:focus {
+                                                outline: none;
+                                            }
+                                        }
+                                        &::after {
+                                            content: "v";
+                                            font-size: 1rem;
+                                            top: 35px;
+                                            right: 20px;
+                                            position: absolute;
+                                            color: #213f7d;
+                                            opacity: 0.5;
+                                        }
+                                    }
+                                }
+
+                                label {
+                                    width: 100%;
+                                    display: flex;
+                                    display: grid;
+                                    gap: 10px;
+                                    font-size: 14px;
+                                    color: #545f7d;
+                                    font-weight: 500;
+
+                                    input {
+                                        padding: 10px 15px;
+                                        border-radius: 8px;
+                                        background: #ffffff;
+                                        border: 1px solid #21407d7c;
+
+                                        &:focus {
+                                            outline: none;
+                                        }
+
+                                        &::placeholder {
+                                            font-size: 14px;
+                                            color: #545f7d;
+                                            opacity: 0.5;
+                                        }
+                                    }
+
+                                    div {
+                                        display: grid;
+                                        width: 100%;
+                                        .calendarIcon {
+                                            width: 15px;
+                                            position: absolute;
+                                            right: 15px;
+                                            top: 10px;
+                                        }
+                                    }
+                                }
+
+                                .filterAction {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    gap: 10px;
+
+                                    button {
+                                        width: 100%;
+                                        padding: 10px 0;
+                                        border-radius: 8px;
+                                        font-size: 14px;
+                                        cursor: pointer;
+                                    }
+
+                                    .resetBtn {
+                                        color: #545f7d;
+                                        border: 1px solid #545f7d;
+                                        background-color: transparent;
+
+                                        &:hover {
+                                            background-color: #545f7d0a;
+                                        }
+                                    }
+
+                                    .filterBtn {
+                                        background-color: #39cdcc;
+                                        border: 1px solid #39cdcc;
+                                        color: #fff;
+
+                                        &:hover {
+                                            background-color: #2aa7a7;
+                                        }
+                                    }
+                                }
                             }
                         }
-                    }
                     }
                 }
 
@@ -713,7 +832,7 @@
                     justify-content: space-between;
                     margin-top: 40px;
 
-                    p { 
+                    p {
                         margin-bottom: 0;
                     }
 
@@ -721,7 +840,7 @@
                         width: 80px;
                         height: 30px;
                         background: #213f7d26;
-                        color: #213F7D;
+                        color: #213f7d;
                         border-radius: 4px;
                         font-weight: 600;
                         padding: 0 7px;
@@ -729,16 +848,18 @@
                     }
 
                     .displayResults {
-                        width: 100%;
+                        width: fit-content;
                         display: flex;
                         align-items: center;
                         gap: 10px;
-                        color: #545F7D;
+                        color: #545f7d;
 
                         p {
                             font-size: 16px;
                             font-weight: 500;
                             color: #545f7da5;
+                            margin: 0;
+                            width: max-content;
                         }
                     }
 
@@ -748,7 +869,7 @@
                         align-items: center;
 
                         .activePageNav {
-                            color: #213F7D;
+                            color: #213f7d;
                         }
 
                         a {
@@ -756,23 +877,20 @@
                             color: #545f7da5;
                         }
 
-                        .btnPrev, .btnNext {
-                        width: 30px;
-                        height: 30px;
-                        border-radius: 4px;
-                        background-color: #21407d23;
+                        .btnPrev,
+                        .btnNext {
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 4px;
+                            background-color: #21407d23;
 
-                        .prev, .next {
-                            width: 15px;
-                            height: 15px;
+                            .prev,
+                            .next {
+                                width: 15px;
+                                height: 15px;
+                            }
                         }
-
                     }
-
-                        
-                    }
-
-                    
                 }
             }
 
@@ -787,33 +905,32 @@
                 height: 100%;
                 top: 0;
                 @include flex-gap(45px);
-    
+
                 ul:nth-child(1) {
                     padding: 0 30px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     @include flex-gap(50px);
-            
-    
+
                     li {
                         display: flex;
                         align-items: center;
                         @include flex-gap(10px);
                         font-size: 16px;
-                        color: #213F7D;
+                        color: #213f7d;
                         cursor: pointer;
-    
+
                         .briefcaseIcon {
                             width: 20px;
                             height: 20px;
                         }
-    
+
                         span {
                             display: flex;
                             align-items: center;
                             @include flex-gap(20px);
-                            
+
                             .dropdownIcon {
                                 display: flex;
                                 align-self: flex-end;
@@ -821,29 +938,29 @@
                                 height: 14px;
                             }
                         }
-                        
                     }
-    
+
                     li:nth-child(2) {
                         display: flex;
                         align-items: center;
                         @include flex-gap(10px);
                         font-size: 16px;
                         color: #21407d87;
-    
+
                         .dashboardIcon {
                             width: 20px;
                             height: 20px;
                         }
                     }
                 }
-    
+
                 .customersNavLinks {
                     p {
                         font-size: 12px;
                         padding: 0 30px;
+                        color: #545f7d;
                     }
-    
+
                     ul {
                         margin-top: 10px;
                         display: flex;
@@ -852,55 +969,54 @@
                             cursor: pointer;
                             padding: 15px 25px;
                             background: #39cdcd1c;
-                            border-left: 5px solid #39CDCC;
-                            color: #213F7D;
+                            border-left: 5px solid #39cdcc;
+                            color: #213f7d;
                             display: flex;
                             @include flex-gap(12px);
-    
+
                             .usersIcon {
                                 width: 20px;
                                 height: 20px;
                             }
                         }
-    
+
                         li {
                             padding: 15px 25px;
                             display: flex;
                             color: #21407d87;
                             cursor: pointer;
                             @include flex-gap(12px);
-                            
-    
+
                             .guarantorsIcon {
                                 width: 20px;
                                 height: 20px;
                             }
-    
+
                             .sackIcon {
                                 width: 20px;
                                 height: 20px;
                             }
-    
+
                             .handshakeIcon {
-                                    width: 20px;
-                                    height: 20px;
+                                width: 20px;
+                                height: 20px;
                             }
-    
+
                             .piggybankIcon {
                                 width: 20px;
                                 height: 20px;
                             }
-    
+
                             .loansackIcon {
                                 width: 20px;
                                 height: 20px;
                             }
-    
+
                             .usercheckIcon {
                                 width: 20px;
                                 height: 20px;
                             }
-    
+
                             .usertimesIcon {
                                 width: 20px;
                                 height: 20px;
@@ -908,132 +1024,137 @@
                         }
                     }
                 }
-    
+
                 .businessesNavLinks {
                     p {
                         font-size: 12px;
-                        padding: 0 30px;
+                        padding: 0 25px;
+                        color: #545f7d;
                     }
-    
+
                     ul {
                         margin-top: 10px;
                         display: flex;
                         flex-direction: column;
-                       
+
                         li {
                             padding: 15px 25px;
                             display: flex;
                             color: #21407d87;
                             cursor: pointer;
                             @include flex-gap(12px);
-                            
-    
+
                             .organizationIcon {
                                 width: 20px;
                                 height: 20px;
                             }
-    
+
                             .sackIcon {
                                 width: 20px;
                                 height: 20px;
                             }
-    
+
                             .bankIcon {
-                                    width: 20px;
-                                    height: 20px;
+                                width: 20px;
+                                height: 20px;
                             }
-    
+
                             .coinsIcon {
                                 width: 20px;
                                 height: 20px;
                             }
-    
+
                             .loansackIcon {
                                 width: 20px;
                                 height: 20px;
                             }
-    
+
                             .transactionsIcon {
                                 width: 20px;
                                 height: 20px;
                             }
-    
+
                             .servicesIcon {
                                 width: 20px;
                                 height: 20px;
                             }
-    
+
                             .serviceaccountsIcon {
                                 width: 20px;
                                 height: 20px;
                             }
-    
+
                             .settlementsIcon {
                                 width: 20px;
                                 height: 20px;
                             }
-    
+
                             .reportsIcon {
                                 width: 20px;
                                 height: 20px;
                             }
-    
                         }
                     }
                 }
-    
+
                 .settingsNavLinks {
                     p {
                         font-size: 12px;
-                        padding: 0 30px;
+                        padding: 0 25px;
+                        color: #545f7d;
                     }
-    
+
                     ul {
                         margin-top: 10px;
                         display: flex;
                         flex-direction: column;
-                       
+
                         li {
                             padding: 15px 25px;
                             display: flex;
                             color: #21407d87;
                             cursor: pointer;
                             @include flex-gap(12px);
-                            
-    
+
                             .preferencesIcon {
                                 width: 20px;
                                 height: 20px;
                             }
-    
+
                             .feesandpricingIcon {
                                 width: 20px;
                                 height: 20px;
                             }
-    
+
                             .auditlogsIcon {
-                                    width: 20px;
-                                    height: 20px;
+                                width: 20px;
+                                height: 20px;
                             }
-    
                         }
                     }
                 }
             }
 
-            .sideMenuDesktop::-webkit-scrollbar, .dashboardContainer::-webkit-scrollbar {
+            .sideMenuDesktop::-webkit-scrollbar,
+            .dashboardContainer::-webkit-scrollbar {
                 width: 10px;
             }
 
-            .sideMenuDesktop::-webkit-scrollbar-track, .dashboardContainer::-webkit-scrollbar-track, table::-webkit-scrollbar-track {
-                background: rgba(57, 205, 205, 0.1098039216); 
-            }
-    
-            .sideMenuDesktop::-webkit-scrollbar-thumb, .dashboardContainer::-webkit-scrollbar-thumb, table::-webkit-scrollbar-thumb {
-                background-color: #39CDCC; 
+            .sideMenuDesktop::-webkit-scrollbar-track,
+            .dashboardContainer::-webkit-scrollbar-track,
+            table::-webkit-scrollbar-track {
+                background: rgba(57, 205, 205, 0.1098039216);
             }
 
-            .sideMenuDesktop::-webkit-scrollbar-thumb:hover, .dashboardContainer::-webkit-scrollbar-thumb:hover, table::-webkit-scrollbar-thumb:hover {
+            .sideMenuDesktop::-webkit-scrollbar-thumb,
+            .dashboardContainer::-webkit-scrollbar-thumb,
+            table::-webkit-scrollbar-thumb {
+                background-color: #39cdcc;
+            }
+
+            .sideMenuDesktop::-webkit-scrollbar-thumb:hover,
+            .dashboardContainer::-webkit-scrollbar-thumb:hover,
+            table::-webkit-scrollbar-thumb:hover {
                 background-color: #2cb2b1;
             }
 
@@ -1042,11 +1163,10 @@
             }
         }
     }
-   
+
     .desktopHeader {
         position: sticky;
         top: 0;
         z-index: 3;
     }
 }
-

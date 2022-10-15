@@ -1,13 +1,15 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useState } from 'react'
 import { Form, Link } from 'react-router-dom'
 import Button from '../Button'
 import { Header, MobileHeader, SideNavigation } from '../Header/HeaderComponent'
+import { CalendarIcon } from '../Icons/Calendar'
 import { FilterIcon } from '../Icons/Filter'
 import { LoanIcon } from '../Icons/Loan'
 import { MenuVerticalIcon } from '../Icons/Menu'
 import { NavigationNextIcon, NavigationPreviousIcon } from '../Icons/Pagination'
 import { SavingsIcon } from '../Icons/Savings'
 import { UsersEllipseIcon, UsersEllipseIcon2 } from '../Icons/Users'
+import Input from '../Input'
 import styles from './styles/dashboard.module.scss'
 
 const DashboardInfo = ({ className, icon, statsstyles, text, countstyles, count }: { className: string, icon: ReactNode, text: string, count: string, statsstyles: string, countstyles: string }) => {
@@ -23,6 +25,7 @@ const DashboardInfo = ({ className, icon, statsstyles, text, countstyles, count 
 }
 
 export default function DashboardComponent() {
+    const [showFilter, setShowFilter] = useState<boolean>()
     return (
         <div className={styles.main}>
             <div className={styles.mobile}>
@@ -36,7 +39,7 @@ export default function DashboardComponent() {
             <div className={styles.dashboard}>
                 <SideNavigation styles={styles} />
                 <div className={styles.dashboardContainer}>
-                    <p>Users</p>
+                    <p style={{ marginBottom: 50 }}>Users</p>
                     <div className={styles.usersInfo}>
                         <DashboardInfo className={styles.users} icon={<UsersEllipseIcon className={styles.userellipseIcon} />
                         } text={'USERS'} count={'2,453'} statsstyles={styles.usersStat} countstyles={styles.usersCount} />
@@ -56,27 +59,27 @@ export default function DashboardComponent() {
                             <table>
                                 <thead>
                                     <tr>
-                                        <th>
+                                        <th onClick={() => { setShowFilter(!showFilter) }}>
                                             ORGANIZATION
                                             <FilterIcon className={styles.filterIcon} />
                                         </th>
-                                        <th>
+                                        <th onClick={() => { setShowFilter(!showFilter) }}>
                                             USERNAME
                                             <FilterIcon className={styles.filterIcon} />
                                         </th>
-                                        <th>
+                                        <th onClick={() => { setShowFilter(!showFilter) }}>
                                             EMAIL
                                             <FilterIcon className={styles.filterIcon} />
                                         </th>
-                                        <th>
+                                        <th onClick={() => { setShowFilter(!showFilter) }}>
                                             PHONE NUMBER
                                             <FilterIcon className={styles.filterIcon} />
                                         </th>
-                                        <th>
+                                        <th onClick={() => { setShowFilter(!showFilter) }}>
                                             DATE JOINED
                                             <FilterIcon className={styles.filterIcon} />
                                         </th>
-                                        <th>
+                                        <th onClick={() => { setShowFilter(!showFilter) }}>
                                             STATUS
                                             <FilterIcon className={styles.filterIcon} />
                                         </th>
@@ -115,7 +118,62 @@ export default function DashboardComponent() {
                                             </tr>
                                         )
                                     })}
+                                    {showFilter && <tr>
+                                        <td>
+                                            <div className={styles.tableFilter}>
+                                                <Form method="get">
+                                                    <div className={styles.organization}>
+                                                        <p>Organization</p>
+                                                        <label htmlFor="organization">
+                                                            <select name="organization" id="organziation">
+                                                                <option value="select">Select</option>
+                                                            </select>
+                                                        </label>
+                                                    </div>
+
+                                                    <label htmlFor="username">
+                                                        Username
+                                                        <Input type='text' placeholder='User' handleChange={undefined} className={styles.usernameInput} />
+                                                    </label>
+
+                                                    <label htmlFor="email">
+                                                        Email
+                                                        <Input type='email' placeholder='User' handleChange={undefined} className={styles.usernameInput} />
+                                                    </label>
+
+                                                    <label htmlFor="date">
+                                                        Date
+                                                        <div style={{ position: 'relative', width: '100%' }}>
+                                                            <Input type={"text"} placeholder='Date' handleChange={undefined} className={styles.emailInput} />
+                                                            <CalendarIcon className={styles.calendarIcon} />
+                                                        </div>
+
+                                                    </label>
+
+                                                    <label htmlFor="Phone Number">
+                                                        Phone Number
+                                                        <Input type='tel' placeholder='Phone Number' handleChange={undefined} className={styles.phoneNumberInput} />
+                                                    </label>
+
+                                                    <div className={styles.status}>
+                                                        <p>Status</p>
+                                                        <label htmlFor="status">
+                                                            <select name="status" id="status">
+                                                                <option value="select">Select</option>
+                                                            </select>
+                                                        </label>
+                                                    </div>
+
+                                                    <div className={styles.filterAction}>
+                                                        <Button btnText={'Reset'} type={'button'} handleClick={undefined} className={styles.resetBtn} />
+                                                        <Button btnText={'Filter'} type={'button'} handleClick={undefined} className={styles.filterBtn} />
+                                                    </div>
+                                                </Form>
+                                            </div>
+                                        </td>
+                                    </tr>}
                                 </tbody>
+
                             </table>
                         </div>
 

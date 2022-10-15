@@ -1,0 +1,399 @@
+@media only screen and (max-width: 900px) {
+  .mobileHeaderContainer {
+    min-height: 75px;
+    display: flex;
+    min-height: 100px;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+  }
+  .mobileHeaderContainer .mobileHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    gap: 24px;
+  }
+  .mobileHeaderContainer .mobileHeader .logo {
+    max-width: 125px;
+    padding: 20px;
+  }
+  .mobileHeaderContainer .mobileHeader .logo img {
+    width: 100%;
+  }
+  .mobileHeaderContainer .mobileHeader .right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  .mobileHeaderContainer .mobileHeader .right .bellIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .mobileHeader .right .avatarWrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .mobileHeaderContainer .mobileHeader .right .avatarWrapper .avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+  }
+  .mobileHeaderContainer .mobileHeader .right .avatarWrapper .avatar img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  }
+  .mobileHeaderContainer .mobileHeader .right .avatarWrapper .username {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .mobileHeaderContainer .mobileHeader .right .avatarWrapper .username p {
+    font-size: 14px;
+  }
+  .mobileHeaderContainer .mobileHeader .right .avatarWrapper .username .dropdownIconFilled {
+    display: flex;
+    align-self: flex-end;
+    width: 14px;
+    height: 14px;
+  }
+  .mobileHeaderContainer .mobileMenu {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 10px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: #fff;
+    gap: 15px;
+  }
+  .mobileHeaderContainer .mobileMenu .menuIcon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  .mobileHeaderContainer .mobileMenu .bellIcon {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+  .mobileHeaderContainer .sideMenu {
+    overflow: scroll;
+    max-height: 100vh;
+    width: 300px;
+    background-color: #fff;
+    box-shadow: 6px 0px 20px 3px #eee;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    gap: 45px;
+  }
+  .mobileHeaderContainer .sideMenu ul:nth-child(1) {
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: column;
+    gap: 50px;
+  }
+  .mobileHeaderContainer .sideMenu ul:nth-child(1) li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #213F7D;
+    cursor: pointer;
+  }
+  .mobileHeaderContainer .sideMenu ul:nth-child(1) li .briefcaseIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu ul:nth-child(1) li span {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .mobileHeaderContainer .sideMenu ul:nth-child(1) li span .dropdownIcon {
+    display: flex;
+    align-self: flex-end;
+    width: 14px;
+    height: 14px;
+  }
+  .mobileHeaderContainer .sideMenu ul:nth-child(1) .sidenavLink {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: rgba(33, 64, 125, 0.5294117647);
+  }
+  .mobileHeaderContainer .sideMenu ul:nth-child(1) .sidenavLink .dashboardIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .customersNavLinks p {
+    font-size: 12px;
+    padding: 0 30px;
+  }
+  .mobileHeaderContainer .sideMenu .customersNavLinks ul {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .mobileHeaderContainer .sideMenu .customersNavLinks ul li:nth-child(1) {
+    cursor: pointer;
+    padding: 15px 25px;
+    background: rgba(57, 205, 205, 0.1098039216);
+    border-left: 5px solid #39CDCC;
+    color: #213F7D;
+    display: flex;
+    gap: 12px;
+  }
+  .mobileHeaderContainer .sideMenu .customersNavLinks ul li:nth-child(1) .usersIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .customersNavLinks ul li {
+    padding: 15px 25px;
+    display: flex;
+    color: rgba(33, 64, 125, 0.5294117647);
+    cursor: pointer;
+    gap: 12px;
+  }
+  .mobileHeaderContainer .sideMenu .customersNavLinks ul li .guarantorsIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .customersNavLinks ul li .sackIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .customersNavLinks ul li .handshakeIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .customersNavLinks ul li .piggybankIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .customersNavLinks ul li .loansackIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .customersNavLinks ul li .usercheckIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .customersNavLinks ul li .usertimesIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .businessesNavLinks p {
+    font-size: 12px;
+    padding: 0 30px;
+  }
+  .mobileHeaderContainer .sideMenu .businessesNavLinks ul {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .mobileHeaderContainer .sideMenu .businessesNavLinks ul li {
+    padding: 15px 25px;
+    display: flex;
+    color: rgba(33, 64, 125, 0.5294117647);
+    cursor: pointer;
+    gap: 12px;
+  }
+  .mobileHeaderContainer .sideMenu .businessesNavLinks ul li .organizationIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .businessesNavLinks ul li .sackIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .businessesNavLinks ul li .bankIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .businessesNavLinks ul li .coinsIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .businessesNavLinks ul li .loansackIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .businessesNavLinks ul li .transactionsIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .businessesNavLinks ul li .servicesIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .businessesNavLinks ul li .serviceaccountsIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .businessesNavLinks ul li .settlementsIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .businessesNavLinks ul li .reportsIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .settingsNavLinks p {
+    font-size: 12px;
+    padding: 0 30px;
+  }
+  .mobileHeaderContainer .sideMenu .settingsNavLinks ul {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  .mobileHeaderContainer .sideMenu .settingsNavLinks ul li {
+    padding: 15px 25px;
+    display: flex;
+    color: rgba(33, 64, 125, 0.5294117647);
+    cursor: pointer;
+    gap: 12px;
+  }
+  .mobileHeaderContainer .sideMenu .settingsNavLinks ul li .preferencesIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .settingsNavLinks ul li .feesandpricingIcon {
+    width: 20px;
+    height: 20px;
+  }
+  .mobileHeaderContainer .sideMenu .settingsNavLinks ul li .auditlogsIcon {
+    width: 20px;
+    height: 20px;
+  }
+}
+.headerContainer {
+  display: grid;
+  background-color: #fff;
+  min-height: 75px;
+  width: 100%;
+}
+.headerContainer .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.headerContainer .header .logo {
+  max-width: 120px;
+  display: flex;
+}
+.headerContainer .header .logo img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.headerContainer .header form {
+  max-width: 300px;
+  width: 100%;
+  position: relative;
+}
+.headerContainer .header form .searchForm {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.headerContainer .header form .searchForm label {
+  display: flex;
+  width: 100%;
+}
+.headerContainer .header form .searchForm label input {
+  width: 100%;
+  border: 1px solid rgba(33, 64, 125, 0.3254901961);
+  padding: 10px;
+  border-radius: 8px;
+  color: #213F7D;
+}
+.headerContainer .header form .searchForm label input::-moz-placeholder {
+  color: rgba(33, 64, 125, 0.4901960784);
+}
+.headerContainer .header form .searchForm label input:-ms-input-placeholder {
+  color: rgba(33, 64, 125, 0.4901960784);
+}
+.headerContainer .header form .searchForm label input::placeholder {
+  color: rgba(33, 64, 125, 0.4901960784);
+}
+.headerContainer .header form .searchForm label input:focus {
+  outline: 1px solid #213F7D;
+  border: none;
+}
+.headerContainer .header form .searchForm .searchBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50px;
+  background-color: #39CDCC;
+  height: -webkit-fill-available;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  cursor: pointer;
+}
+.headerContainer .header form .searchForm .searchBtn:hover {
+  background-color: #1d9c9c;
+}
+.headerContainer .header form .searchForm .searchBtn .searchIcon {
+  width: 14px;
+  height: 14px;
+}
+.headerContainer .header .right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.headerContainer .header .right a {
+  font-size: 14px;
+}
+.headerContainer .header .right .bellIcon {
+  width: 20px;
+  height: 20px;
+}
+.headerContainer .header .right .avatarWrapper {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  cursor: pointer;
+}
+.headerContainer .header .right .avatarWrapper .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+}
+.headerContainer .header .right .avatarWrapper .avatar img {
+  border-radius: 50%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.headerContainer .header .right .avatarWrapper .username {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+.headerContainer .header .right .avatarWrapper .username .dropdownIconFilled {
+  display: flex;
+  align-self: flex-end;
+  width: 14px;
+  height: 14px;
+}/*# sourceMappingURL=header.module.css.map */
