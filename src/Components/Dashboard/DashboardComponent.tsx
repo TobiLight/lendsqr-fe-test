@@ -1,5 +1,5 @@
 import React, { ReactNode, useState } from 'react'
-import { Form, Link } from 'react-router-dom'
+import { Form, Link, Outlet } from 'react-router-dom'
 import Button from '../Button'
 import { Header, MobileHeader, SideNavigation } from '../Header/HeaderComponent'
 import { CalendarIcon } from '../Icons/Calendar'
@@ -12,20 +12,8 @@ import { UsersEllipseIcon, UsersEllipseIcon2 } from '../Icons/Users'
 import Input from '../Input'
 import styles from './styles/dashboard.module.scss'
 
-const DashboardInfo = ({ className, icon, statsstyles, text, countstyles, count }: { className: string, icon: ReactNode, text: string, count: string, statsstyles: string, countstyles: string }) => {
-    return (
-        <div className={className}>
-            {icon}
-            <div className={statsstyles}>
-                <p>{text}</p>
-                <p className={countstyles}>{count}</p>
-            </div>
-        </div>
-    )
-}
 
 export default function DashboardComponent() {
-    const [showFilter, setShowFilter] = useState<boolean>()
     return (
         <div className={styles.main}>
             <div className={styles.mobile}>
@@ -38,7 +26,7 @@ export default function DashboardComponent() {
 
             <div className={styles.dashboard}>
                 <SideNavigation styles={styles} />
-                <div className={styles.dashboardContainer}>
+                {/* <div className={styles.dashboardContainer}>
                     <p style={{ marginBottom: 50 }}>Users</p>
                     <div className={styles.usersInfo}>
                         <DashboardInfo className={styles.users} icon={<UsersEllipseIcon className={styles.userellipseIcon} />
@@ -215,8 +203,9 @@ export default function DashboardComponent() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
+                <Outlet />
             </div>
         </div>
     )

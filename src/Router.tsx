@@ -1,6 +1,8 @@
 import axios from "axios";
 import { createBrowserRouter, json, Link } from "react-router-dom";
+import DashboardComponent from "./Components/Dashboard/DashboardComponent";
 import DashboardPage from "./Pages/Dashboard";
+import UserInfoPage from "./Pages/Dashboard/user";
 import LoginPage from "./Pages/Login";
 import './Styles/global.scss'
 
@@ -48,7 +50,18 @@ const AppRouter = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <DashboardPage />
+        element: <DashboardComponent />,
+        children: [
+            {
+                path: '',
+                element: <DashboardPage />
+            }
+            ,
+            {
+                path: 'user/:userID',
+                element: <UserInfoPage />
+            }
+        ]
     }
 ]);
 
