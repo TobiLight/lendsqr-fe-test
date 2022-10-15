@@ -1,10 +1,10 @@
 @mixin screenbreakpoint($size) {
   @if $size == "mobile" {
-    @media (max-width: 899px) {
+    @media (max-width: 900px) {
       @content;
     }
   } @else if $size == "tablet-portrait-up" {
-    @media (min-width: 900px) and (max-width: 900px) {
+    @media (min-width: 900px) and (max-width: 1024px) {
       @content;
     }
   } @else if $size == "tablet-landscape-up" {

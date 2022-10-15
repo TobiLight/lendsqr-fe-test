@@ -3,18 +3,45 @@
 .main {
     background-color: #f2f2f2;
     min-height: 100vh;
+
+    .mobile {
+        display: none;
+    }
     
-    
+    @media only screen and (max-width: 900px) {
+        .mobile {
+            display: block;
+        }
+
+        .desktopHeader {
+            display: none;
+        }
+    } 
+
+    // @media only screen and (min-width: 900px) and (max-width: 1024px) {
+    //     .desktopHeader {
+    //         position: sticky;
+    //         top: 0;
+    //         z-index: 3;
+    //     }
+    // }
+
+  
+
     .dashboard {
         padding: 40px 20px;
         position: relative;
         top: 120px;
-        
+
         p {
             font-size: 24px;
             color: #213F7D;
             font-weight: 500;
             margin-bottom: 50px;
+        }
+
+        .sideMenuDesktop {
+            display: none;
         }
 
        @media only screen and (max-width: 600px) {
@@ -28,10 +55,18 @@
             display: flex;
             align-items: center;
             gap: 20px;
+
+            a {
+                font-size: 12px;
+            }
         }
        }
 
         @media only screen and (max-width: 900px) {
+            .mobile {
+                display: none;
+            }
+
             .usersInfo {
                 display: grid;
                 grid-template-columns: auto auto;
@@ -40,7 +75,7 @@
                 .users {
                     display: flex;
                     flex-direction: column;
-                    padding: 20px 0 0px 20px;
+                    padding: 20px;
                     height: 160px;
                     background-color: #fff;
                     border-radius: 4px;
@@ -70,7 +105,7 @@
                 .active {
                     display: flex;
                     flex-direction: column;
-                    padding: 20px 0 0px 20px;
+                    padding: 20px;
                     height: 160px;
                     background-color: #fff;
                     border-radius: 4px;
@@ -101,7 +136,7 @@
                 .usersloans {
                     display: flex;
                     flex-direction: column;
-                    padding: 20px 0 0px 20px;
+                    padding: 20px;
                     height: 160px;
                     background-color: #fff;
                     border-radius: 4px;
@@ -132,7 +167,7 @@
                 .userswithsavings {
                     display: flex;
                     flex-direction: column;
-                    padding: 20px 0 0px 20px;
+                    padding: 20px;
                     height: 160px;
                     background-color: #fff;
                     border-radius: 4px;
@@ -348,135 +383,651 @@
             
         }
 
-        // @media only screen and (min-width: 640px) and (max-width: 900px) {
-        //     .usersInfo {
-        //         display: grid;
-        //         grid-template-columns: auto auto;
-        //         gap: 20px;
-    
-        //         .users {
-        //             display: flex;
-        //             flex-direction: column;
-        //             padding: 20px 0 0px 20px;
-        //             height: 160px;
-        //             background-color: #fff;
-        //             border-radius: 4px;
-        //             gap: 30px;
-                    
-        //             .userellipseIcon {
-        //                 width: 40px;
-        //                 width: 40px;
-        //             }
-
-        //             .usersStat {
-        //                 display: flex;
-        //                 flex-direction: column;
-        //                 gap: 20px;
-        //                 p {
-        //                     font-size: 14px;
-        //                     margin-bottom: 0;
-        //                 }
-
-        //                 .usersCount {
-        //                     font-weight: 500;
-        //                     font-size: 24px;
-        //                 }
-        //             }
-        //         }
-                
-        //         .active {
-        //             display: flex;
-        //             flex-direction: column;
-        //             padding: 20px 0 0px 20px;
-        //             height: 160px;
-        //             background-color: #fff;
-        //             border-radius: 4px;
-        //             gap: 30px;
-
-        //             .userellipseIcon2 {
-        //                 width: 40px;
-        //                 width: 40px;
-        //             }
-
-        //             .activeStats {
-        //                 display: flex;
-        //                 flex-direction: column;
-        //                 gap: 20px;
-
-        //                 p {
-        //                     font-size: 14px;
-        //                     margin-bottom: 0;
-        //                 }
-
-        //                 .activeCount {
-        //                     font-weight: 500;
-        //                     font-size: 24px;
-        //                 }
-        //             }
-        //         }
-
-        //         .usersloans {
-        //             display: flex;
-        //             flex-direction: column;
-        //             padding: 20px 0 0px 20px;
-        //             height: 160px;
-        //             background-color: #fff;
-        //             border-radius: 4px;
-        //             gap: 30px;
-
-        //             .loanIcon {
-        //                 width: 40px;
-        //                 width: 40px;
-        //             }
-
-        //             .usersloansStats {
-        //                 display: flex;
-        //                 flex-direction: column;
-        //                 gap: 20px;
-                        
-        //                 p {
-        //                     font-size: 14px;
-        //                     margin-bottom: 0;
-        //                 }
-
-        //                 .usersloansCount {
-        //                     font-weight: 500;
-        //                     font-size: 24px;
-        //                 }
-        //             }
-        //         }
-
-        //         .userswithsavings {
-        //             display: flex;
-        //             flex-direction: column;
-        //             padding: 20px 0 0px 20px;
-        //             height: 160px;
-        //             background-color: #fff;
-        //             border-radius: 4px;
-        //             gap: 30px;
-
-        //             .savingsIcon {
-        //                 width: 40px;
-        //                 width: 40px;
-        //             }
-
-        //             .userswithsavingsStats {
-        //                 display: flex;
-        //                 flex-direction: column;
-        //                 gap: 20px;
-                        
-        //                 p {
-        //                     font-size: 14px;
-        //                     margin-bottom: 0;
-        //                 }
-
-        //                 .userswithsavingsCount {
-        //                     font-weight: 500;
-        //                     font-size: 24px;
-        //                 }
-        //             }
-        //         }
-        //     }
-        // }
+        @media only screen and (min-width: 900px) and (max-width: 1440px) { 
+           
+        }
     }
+    
 }
+
+@media only screen and (min-width: 900px) and (max-width: 1440px) {
+    .main {
+        display: grid;
+        grid-template-rows: 75px calc(100vh - 75px);
+
+        .dashboard {
+            top: 0;
+            display: grid;
+            grid-template-columns: 300px auto;
+            padding: 0;
+            overflow: auto;
+            grid-template-areas: "sideMenuDesktop dashboardContainer";
+            
+            
+            .dashboardContainer {
+                width: 100%;
+                overflow: hidden;
+                grid-column: none;
+                overflow-y: scroll;
+                padding-top: 40px;
+                padding-bottom: 70px;
+
+                p {
+                    width: 95%;
+                    margin: auto;
+                    margin-bottom: 50px;
+                }
+            }
+
+            .usersInfo {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                gap: 20px;
+                width: 95%;
+                margin: auto;
+                margin-bottom: 50px;
+                
+    
+                .users {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px;
+                    height: 160px;
+                    background-color: #fff;
+                    border-radius: 4px;
+                    gap: 30px;
+                    
+                    .userellipseIcon {
+                        width: 40px;
+                        width: 40px;
+                    }
+
+                    .usersStat {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        p {
+                            font-size: 14px;
+                            margin-bottom: 0;
+                        }
+
+                        .usersCount {
+                            font-weight: 500;
+                            font-size: 24px;
+                        }
+                    }
+                }
+                
+                .active {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px;
+                    height: 160px;
+                    background-color: #fff;
+                    border-radius: 4px;
+                    gap: 30px;
+
+                    .userellipseIcon2 {
+                        width: 40px;
+                        width: 40px;
+                    }
+
+                    .activeStats {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+
+                        p {
+                            font-size: 14px;
+                            margin-bottom: 0;
+                        }
+
+                        .activeCount {
+                            font-weight: 500;
+                            font-size: 24px;
+                        }
+                    }
+                }
+
+                .usersloans {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px;
+                    height: 160px;
+                    background-color: #fff;
+                    border-radius: 4px;
+                    gap: 30px;
+
+                    .loanIcon {
+                        width: 40px;
+                        width: 40px;
+                    }
+
+                    .usersloansStats {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        
+                        p {
+                            font-size: 14px;
+                            margin-bottom: 0;
+                        }
+
+                        .usersloansCount {
+                            font-weight: 500;
+                            font-size: 24px;
+                        }
+                    }
+                }
+
+                .userswithsavings {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px;
+                    height: 160px;
+                    background-color: #fff;
+                    border-radius: 4px;
+                    gap: 30px;
+
+                    .savingsIcon {
+                        width: 40px;
+                        width: 40px;
+                    }
+
+                    .userswithsavingsStats {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        
+                        p {
+                            font-size: 14px;
+                            margin-bottom: 0;
+                        }
+
+                        .userswithsavingsCount {
+                            font-weight: 500;
+                            font-size: 24px;
+                        }
+                    }
+                }
+            }
+
+            @media only screen and (min-width: 900px) and (max-width: 1024px) {
+                .usersInfo {
+                    grid-template-columns: 2fr 2fr;
+                }
+            }
+
+
+            .userlistcontainer {
+                width: 95%;
+                margin: auto;
+                margin-bottom: 50px;
+                .userlistwrapper {
+                    background-color: #fff;
+                    padding: 20px;
+                    margin-top: 40px;
+                    border-radius: 4px;
+    
+                    table {
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        overflow-x: scroll;
+    
+                        thead {
+                            width: max-content;
+                            tr {
+                                display: flex;
+                                justify-content: space-between;
+                                width: 100%;
+                                text-align: left;
+                                gap: 20px; 
+                                th {
+                                    max-width: 125px;
+                                    width: 125px;
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 10px;
+                                    font-size: 12px;
+                                    font-weight: 500;
+                                    padding: 20px 0;
+                                    margin-bottom: 20px;
+    
+                                    .filterIcon {
+                                        width: 12px;
+                                        height: 12px;
+                                    }
+                                }
+    
+                                th:nth-child(6) {
+                                    max-width: 125px;
+                                }
+    
+                                th:last-child {
+                                    max-width: 125px;
+                                    width: auto;
+                                }
+                            }
+                        }
+    
+                        tbody {
+                            width: max-content;
+                        tr {
+                            display: flex;
+                            justify-content: space-between;
+                            width: max-content;
+                            text-align: left;
+                            gap: 20px;
+                            padding: 20px 0;
+                            border-bottom: 2px solid #eee;
+    
+    
+                            td {
+                                max-width: 125px;
+                                width: 125px;
+                                color: #545F7D;
+                                font-size: 14px;
+    
+                                .moreIcon {
+                                    width: 15px;
+                                    height: 15px;
+                                    cursor: pointer;
+                                }
+                            }
+
+                            td:nth-child(3) {
+                                word-break: break-all;
+                            }
+    
+                            td:nth-child(6) {
+                                max-width: 125px;
+                            }
+    
+                            td:last-child {
+                                width: auto;
+                            }
+    
+                            .inactive {
+                                width: auto;
+                                padding: 5px 20px;
+                                background-color: #545f7d1a;
+                                color: #545F7D;
+                                border-radius: 20px;
+                            }
+    
+                            .pending {
+                                color: #E9B200;
+                                background-color: #e9b3001d;
+                                width: auto;
+                                padding: 5px 20px;
+                                border-radius: 20px;
+                            }
+    
+                            .active {
+                                color: #39CD62;
+                                background-color: #39cd6323;
+                                width: auto;
+                                padding: 5px 20px;
+                                border-radius: 20px;
+                            }
+    
+                            .blacklisted {
+                                color: #E4033B;
+                                background-color: #e4033b26;
+                                width: auto;
+                                padding: 5px 20px;
+                                border-radius: 20px;
+                            }
+                        }
+                    }
+                    }
+                }
+
+                .resultFilter {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 40px;
+
+                    p { 
+                        margin-bottom: 0;
+                    }
+
+                    select {
+                        width: 80px;
+                        height: 30px;
+                        background: #213f7d26;
+                        color: #213F7D;
+                        border-radius: 4px;
+                        font-weight: 600;
+                        padding: 0 7px;
+                        border-right: 7px solid transparent;
+                    }
+
+                    .displayResults {
+                        width: 100%;
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        color: #545F7D;
+
+                        p {
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: #545f7da5;
+                        }
+                    }
+
+                    .resultNavigation {
+                        display: flex;
+                        gap: 20px;
+                        align-items: center;
+
+                        .activePageNav {
+                            color: #213F7D;
+                        }
+
+                        a {
+                            text-decoration: none;
+                            color: #545f7da5;
+                        }
+
+                        .btnPrev, .btnNext {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 4px;
+                        background-color: #21407d23;
+
+                        .prev, .next {
+                            width: 15px;
+                            height: 15px;
+                        }
+
+                    }
+
+                        
+                    }
+
+                    
+                }
+            }
+
+            .sideMenuDesktop {
+                overflow-y: scroll;
+                max-height: -webkit-fill-available;
+                background-color: #fff;
+                display: flex;
+                flex-direction: column;
+                padding: 30px 0;
+                position: sticky;
+                height: 100%;
+                top: 0;
+                @include flex-gap(45px);
+    
+                ul:nth-child(1) {
+                    padding: 0 30px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    @include flex-gap(50px);
+            
+    
+                    li {
+                        display: flex;
+                        align-items: center;
+                        @include flex-gap(10px);
+                        font-size: 16px;
+                        color: #213F7D;
+                        cursor: pointer;
+    
+                        .briefcaseIcon {
+                            width: 20px;
+                            height: 20px;
+                        }
+    
+                        span {
+                            display: flex;
+                            align-items: center;
+                            @include flex-gap(20px);
+                            
+                            .dropdownIcon {
+                                display: flex;
+                                align-self: flex-end;
+                                width: 14px;
+                                height: 14px;
+                            }
+                        }
+                        
+                    }
+    
+                    li:nth-child(2) {
+                        display: flex;
+                        align-items: center;
+                        @include flex-gap(10px);
+                        font-size: 16px;
+                        color: #21407d87;
+    
+                        .dashboardIcon {
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+    
+                .customersNavLinks {
+                    p {
+                        font-size: 12px;
+                        padding: 0 30px;
+                    }
+    
+                    ul {
+                        margin-top: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        li:nth-child(1) {
+                            cursor: pointer;
+                            padding: 15px 25px;
+                            background: #39cdcd1c;
+                            border-left: 5px solid #39CDCC;
+                            color: #213F7D;
+                            display: flex;
+                            @include flex-gap(12px);
+    
+                            .usersIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+    
+                        li {
+                            padding: 15px 25px;
+                            display: flex;
+                            color: #21407d87;
+                            cursor: pointer;
+                            @include flex-gap(12px);
+                            
+    
+                            .guarantorsIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+    
+                            .sackIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+    
+                            .handshakeIcon {
+                                    width: 20px;
+                                    height: 20px;
+                            }
+    
+                            .piggybankIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+    
+                            .loansackIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+    
+                            .usercheckIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+    
+                            .usertimesIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+                    }
+                }
+    
+                .businessesNavLinks {
+                    p {
+                        font-size: 12px;
+                        padding: 0 30px;
+                    }
+    
+                    ul {
+                        margin-top: 10px;
+                        display: flex;
+                        flex-direction: column;
+                       
+                        li {
+                            padding: 15px 25px;
+                            display: flex;
+                            color: #21407d87;
+                            cursor: pointer;
+                            @include flex-gap(12px);
+                            
+    
+                            .organizationIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+    
+                            .sackIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+    
+                            .bankIcon {
+                                    width: 20px;
+                                    height: 20px;
+                            }
+    
+                            .coinsIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+    
+                            .loansackIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+    
+                            .transactionsIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+    
+                            .servicesIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+    
+                            .serviceaccountsIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+    
+                            .settlementsIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+    
+                            .reportsIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+    
+                        }
+                    }
+                }
+    
+                .settingsNavLinks {
+                    p {
+                        font-size: 12px;
+                        padding: 0 30px;
+                    }
+    
+                    ul {
+                        margin-top: 10px;
+                        display: flex;
+                        flex-direction: column;
+                       
+                        li {
+                            padding: 15px 25px;
+                            display: flex;
+                            color: #21407d87;
+                            cursor: pointer;
+                            @include flex-gap(12px);
+                            
+    
+                            .preferencesIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+    
+                            .feesandpricingIcon {
+                                width: 20px;
+                                height: 20px;
+                            }
+    
+                            .auditlogsIcon {
+                                    width: 20px;
+                                    height: 20px;
+                            }
+    
+                        }
+                    }
+                }
+            }
+
+            .sideMenuDesktop::-webkit-scrollbar, .dashboardContainer::-webkit-scrollbar {
+                width: 10px;
+            }
+
+            .sideMenuDesktop::-webkit-scrollbar-track, .dashboardContainer::-webkit-scrollbar-track, table::-webkit-scrollbar-track {
+                background: rgba(57, 205, 205, 0.1098039216); 
+            }
+    
+            .sideMenuDesktop::-webkit-scrollbar-thumb, .dashboardContainer::-webkit-scrollbar-thumb, table::-webkit-scrollbar-thumb {
+                background-color: #39CDCC; 
+            }
+
+            .sideMenuDesktop::-webkit-scrollbar-thumb:hover, .dashboardContainer::-webkit-scrollbar-thumb:hover, table::-webkit-scrollbar-thumb:hover {
+                background-color: #2cb2b1;
+            }
+
+            table::-webkit-scrollbar {
+                height: 10px;
+            }
+        }
+
+       
+    }
+   
+    .desktopHeader {
+        position: sticky;
+        top: 0;
+        z-index: 3;
+    }
+
+
+    
+}
+

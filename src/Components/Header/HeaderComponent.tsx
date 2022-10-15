@@ -25,9 +25,9 @@ import { PricingIcon } from "../Icons/Badge"
 import { ClipboardIcon } from "../Icons/Clipboard"
 import { useState } from "react"
 
-const SideNavigation = (): JSX.Element => {
+export const SideNavigation = ({ styles }: { styles: { [key: string]: string } }): JSX.Element => {
     return (
-        <nav className={styles.mobileSideMenu}>
+        <nav className={styles.sideMenu || styles.sideMenuDesktop}>
             <ul>
                 <li>
                     <BriefcaseIcon className={styles.briefcaseIcon} />
@@ -37,7 +37,7 @@ const SideNavigation = (): JSX.Element => {
                     </span>
                 </li>
 
-                <li className={styles.sidenavLink}>
+                <li>
                     <DashboardIcon className={styles.dashboardIcon} />
                     Dashboard
                 </li>
@@ -144,11 +144,11 @@ const SideNavigation = (): JSX.Element => {
     )
 }
 
-const Header = (): JSX.Element => {
+export const MobileHeader = (): JSX.Element => {
     const [showSideMenu, setShowSideMenu] = useState<boolean>(false)
 
     return (
-        <header className={styles.headerContainer}>
+        <header className={styles.mobileHeaderContainer}>
             <nav className={styles.mobileHeader}>
                 <div className={styles.logo}>
                     <img src={logo} alt="Lendsqr Logo" />
@@ -172,8 +172,15 @@ const Header = (): JSX.Element => {
                 <MenuIcon onClick={() => { setShowSideMenu(!showSideMenu) }} className={styles.menuIcon} />
             </nav>
 
-            {showSideMenu && <SideNavigation />}
-            {/* <div className={styles.headerWrapper}>
+            {showSideMenu && <SideNavigation styles={styles} />}
+        </header>
+    )
+}
+
+export const Header = (): JSX.Element => {
+    return (
+        <header className={styles.headerContainer}>
+            <nav className={styles.header}>
                 <div className={styles.logo}>
                     <img src={logo} alt="Lendsqr Logo" />
                 </div>
@@ -187,19 +194,20 @@ const Header = (): JSX.Element => {
                     </div>
                 </Form>
 
-                <div className={styles.headerRight}>
+                <div className={styles.right}>
                     <Link to="#">Docs</Link>
                     <BellIcon className={styles.bellIcon} />
-                    <div className={styles.avatarInfo}>
-                        <div className={styles.avatarWrapper}>
-                            <img src={avatar} alt="User avatar" />
+                    <div className={styles.avatarWrapper}>
+                        <div className={styles.avatar}>
+                            <img src={avatar} alt="User Avatar" />
                         </div>
-                        <p>Adedeji</p>
+                        <div className={styles.username}>
+                            <p>Adedeji</p>
+                            <DropdownIconFilled className={styles.dropdownIconFilled} />
+                        </div>
                     </div>
                 </div>
-            </div> */}
+            </nav>
         </header>
     )
 }
-
-export default Header
