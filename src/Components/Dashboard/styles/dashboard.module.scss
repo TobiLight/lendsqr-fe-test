@@ -52,6 +52,43 @@
         }
        }
 
+       @media only screen and (max-width: 520px) {
+        .usersInfo {
+            grid-template-columns: auto;
+        }
+
+        .userlistcontainer {
+            .userlistwrapper {
+                table {
+                    thead {
+                        tr {
+                            th {
+                                max-width: 150px;
+                            }
+                        }
+                    }
+
+                    tbody {
+                        tr {
+                            td {
+                                max-width: 150px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+       }
+
+       @media only screen and (min-width:500px) and (max-width: 900px) {
+        .usersInfo {
+            grid-template-columns: auto auto;
+        }
+        
+
+        
+       }
+
         @media only screen and (max-width: 900px) {
             .mobile {
                 display: none;
@@ -59,7 +96,6 @@
 
             .usersInfo {
                 display: grid;
-                grid-template-columns: auto auto;
                 gap: 20px;
     
                 .users {
@@ -372,10 +408,6 @@
 
             
         }
-
-        @media only screen and (min-width: 900px) and (max-width: 1440px) { 
-           
-        }
     }
     
 }
@@ -541,6 +573,8 @@
                     }
                 }
             }
+
+          
 
             @media only screen and (min-width: 900px) and (max-width: 1024px) {
                 .usersInfo {
