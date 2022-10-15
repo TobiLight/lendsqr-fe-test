@@ -33,8 +33,6 @@ export default function DashboardComponent() {
                 <Header />
             </div>
 
-            {/* <SideNavigation styles={styles} /> */}
-
             <div className={styles.dashboard}>
                 <SideNavigation styles={styles} />
                 <div className={styles.dashboardContainer}>
