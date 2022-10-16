@@ -118,7 +118,7 @@
             @include flex-gap(45px);
 
 
-            ul:nth-child(1) {
+            ul:nth-child(1), {
                 padding: 0 30px;
                 display: flex;
                 flex-direction: column;
@@ -134,7 +134,7 @@
                     color: #213F7D;
                     cursor: pointer;
 
-                    .briefcaseIcon {
+                    .briefcaseIcon, .dashboardIcon {
                         width: 20px;
                         height: 20px;
                     }

@@ -1,7 +1,6 @@
 @import "../../../Styles//abstracts/mixins";
 
 .main {
-    background-color: #f2f2f2;
     min-height: 100vh;
 
     .mobile {
@@ -22,6 +21,7 @@
         padding: 40px 20px;
         position: relative;
         top: 120px;
+        background-color: #f2f2f2;
 
         .dashboardContainer {
             p {
@@ -407,7 +407,7 @@
     }
 }
 
-@media only screen and (min-width: 900px) and (max-width: 1440px) {
+@media only screen and (min-width: 901px) and (max-width: 1440px) {
     .main {
         display: grid;
         grid-template-rows: 75px calc(100vh - 75px);
