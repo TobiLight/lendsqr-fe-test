@@ -334,6 +334,10 @@
                                 }
                             }
                         }
+
+                        &::-webkit-scrollbar {
+                            height: 5px;
+                        }
                     }
                 }
 
@@ -1163,8 +1167,11 @@
                 background-color: #2cb2b1;
             }
 
-            table::-webkit-scrollbar {
-                height: 10px;
+            table {
+                &::-webkit-scrollbar {
+                    height: 5px;
+                    appearance: none;
+                }
             }
         }
     }
