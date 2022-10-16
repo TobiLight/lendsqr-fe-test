@@ -2,10 +2,7 @@
 
 main {
     font-family: "Work Sans";
-    overflow-y: scroll;
-    width: 95%;
-    margin: auto;
-    padding: 40px 0;
+    width: 100%;
 
     h3 {
         font-size: 22px;
@@ -37,145 +34,115 @@ main {
         width: 100%;
         align-items: baseline;
         gap: 26px;
+        margin-top: 32px;
+    }
 
-        .userdetailsAction {
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            gap: 10px;
+    .userdetailsAction {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
 
-            button {
-                width: auto;
-                font-size: 12px;
-                font-weight: 500;
-                border-radius: 8px;
-                padding: 10px;
-            }
-
-            .activateBtn {
-                color: #39cdcc;
-                border: 2px solid #39cdcc;
-            }
-
-            .blacklistBtn {
-                color: #E4033B;
-                border: 2px solid #E4033B;
-            }
+        button {
+            width: auto;
+            font-size: 12px;
+            font-weight: 500;
+            border-radius: 8px;
+            padding: 10px;
         }
 
-        .userdetailsWrapper {
+        .activateBtn {
+            color: #39cdcc;
+            border: 2px solid #39cdcc;
+        }
+
+        .blacklistBtn {
+            color: #e4033b;
+            border: 2px solid #e4033b;
+        }
+    }
+
+    .userdetailsWrapper {
+        width: 100%;
+        background-color: #fff;
+        padding: 15px 0 0 0;
+        display: grid;
+        border-radius: 4px;
+
+        .userdetails {
+            display: flex;
             width: 100%;
-            background-color: #fff;
-            padding: 15px 0 0 0;
-            display: grid;
-            border-radius: 4px;
+        }
+    }
 
-            .userdetails {
-                width: 100%;
-                display: grid;
+    .userprofile {
+        display: flex;
+        gap: 15px;
+        width: 100%;
+        padding: 0 24px;
+        margin-top: 20px;
+    }
 
-                .userprofile {
-                    display: flex;
-                    gap: 15px;
-                    padding: 0 15px;
-                    flex-direction: column;
-                    align-items: center;
+    .userprofileInfo {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 20px;
+        width: fit-content;
+        // display: grid;
+        // grid-template-columns: auto auto auto;
+    }
 
-                    .userprofileImg {
-                        width: 80px;
-                        height: 80px;
-                        background-color: #39cdcc;
-                        border-radius: 50%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        background-color: #21407d2d;
+    .userprofileImg {
+        width: 80px;
+        height: 80px;
+        background-color: #39cdcc;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #21407d2d;
 
-                        img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-                        .defaultUserIcon {
-                            display: flex;
-                            width: 40px;
-                            height: 40px;
-                        }
-                    }
+        .defaultUserIcon {
+            display: flex;
+            width: 40px;
+            height: 40px;
+        }
+    }
 
-                    .userprofileInfo {
-                        display: flex;
-                        flex-direction: column;
-                        width: 100%;
-                        align-items: center;
-                        place-content: center;
-                        gap: 15px;
-                        text-align: center;
+    .userProfileNav {
+        display: flex;
+        gap: 20px;
+        width: 100%;
+        overflow-x: scroll;
+        margin-top: 30px;
 
-                        .userfullname,
-                        .userWalletAmount {
-                            display: grid;
-                            gap: 5px;
+        &::-webkit-scrollbar {
+            appearance: none;
+            height: 0;
+        }
 
-                            h3,
-                            p {
-                                color: #213f7d;
-                            }
+        a {
+            display: block;
+            width: max-content;
+            padding: 0 10px;
+            text-decoration: none;
+            font-size: 14px;
+        }
 
-                            h3 {
-                                font-size: 18px;
-                            }
+        .active {
+            color: #39cdcc;
+        }
 
-                            p {
-                                font-size: 14px;
-                            }
-                        }
-
-                        .userTier {
-                            display: grid;
-                            gap: 5px;
-                            .userTierRating {
-                                .ratingFilledIcon,
-                                .ratingOutlinedIcon {
-                                    width: 20px;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            .userProfileNav {
-                display: flex;
-                gap: 20px;
-                width: 100%;
-                overflow-x: scroll;
-                margin-top: 30px;
-
-                &::-webkit-scrollbar {
-                    appearance: none;
-                    height: 0;
-                }
-
-                a {
-                    display: block;
-                    width: max-content;
-                    padding: 0 10px;
-                    text-decoration: none;
-                    font-size: 14px;
-                }
-
-                .active {
-                    color: #39cdcc;
-                }
-
-                .general {
-                    text-align: center;
-                    border-bottom: 2px solid #39cdcc;
-                    padding-bottom: 5px;
-                }
-            }
+        .general {
+            text-align: center;
+            border-bottom: 2px solid #39cdcc;
+            padding-bottom: 5px;
         }
     }
 
@@ -183,10 +150,13 @@ main {
         background-color: #fff;
         padding: 20px;
         margin-top: 30px;
-        gap: 25px;
+        row-gap: 35px;
         display: grid;
 
-        .userPersonalInfo {
+        .userPersonalInfo,
+        .userEducatiomEmploymentInfo,
+        .socialsInfo,
+        .guarantorInfo {
             display: grid;
             gap: 20px;
             border-bottom: 1px solid #21407d1d;
@@ -197,36 +167,522 @@ main {
                 font-weight: 500;
             }
 
-            .userPersonalInfoDetails {
+            .userPersonalInfoDetails,
+            .userEducationEmploymentDetails,
+            .socialsDetails,
+            .guarantorDetails {
                 display: grid;
-                grid-template-columns: auto auto;
+                // grid-template-columns: 47% 47%;
                 grid-template-rows: auto auto;
-                gap: 10px;
-                row-gap: 30px;
+                gap: 25px;
 
-
-                .fullname, .phoneNumber, .email, .bvn, .gender, .maritalStatus, .children, .residence {
+                .fullname,
+                .phoneNumber,
+                .email,
+                .bvn,
+                .gender,
+                .maritalStatus,
+                .children,
+                .residence,
+                .educationLevel,
+                .employmentStatus,
+                .emplyomentSector,
+                .employmentDuration,
+                .officeEmail,
+                .monthlyIncome,
+                .loanRepayment,
+                .twitter,
+                .facebook,
+                .instagram,
+                .relationship {
                     display: flex;
                     flex-direction: column;
-                    gap: 10px;
+                    gap: 8px;
 
                     p {
                         font-size: 12px;
                         font-weight: 400;
-                        color: #545F7D;
+                        color: #545f7d;
                         word-break: break-all;
                     }
 
                     h4 {
                         font-size: 14px;
-                        color: #545F7D;
+                        color: #545f7d;
                         word-break: break-all;
                     }
                 }
             }
         }
 
-       
+        .guarantorInfo {
+            border-bottom: none;
+        }
+    }
+
+    @media only screen and (max-width: 400px) {
+        .userdetails {
+            width: 100%;
+            display: grid;
+
+            .userprofile {
+                display: flex;
+                gap: 15px;
+                padding: 0 15px;
+                flex-direction: column;
+                align-items: center;
+
+                .userprofileImg {
+                    width: 80px;
+                    height: 80px;
+                    background-color: #39cdcc;
+                    border-radius: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: #21407d2d;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+
+                    .defaultUserIcon {
+                        display: flex;
+                        width: 40px;
+                        height: 40px;
+                    }
+                }
+
+                .userprofileInfo {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    align-items: center;
+                    place-content: center;
+                    gap: 15px;
+                    text-align: center;
+
+                    .userfullname,
+                    .userWalletAmount {
+                        display: grid;
+                        gap: 5px;
+
+                        h3,
+                        p {
+                            color: #213f7d;
+                        }
+
+                        h3 {
+                            font-size: 18px;
+                        }
+
+                        p {
+                            font-size: 14px;
+                        }
+                    }
+
+                    .userTier {
+                        display: grid;
+                        gap: 5px;
+                        .userTierRating {
+                            .ratingFilledIcon,
+                            .ratingOutlinedIcon {
+                                width: 20px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 400px) and (max-width: 650px) {
+        .userprofile {
+            flex-direction: column;
+            align-items: center;
+
+            .userprofileImg {
+                width: 80px;
+                height: 80px;
+                background-color: #39cdcc;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #21407d2d;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .defaultUserIcon {
+                    display: flex;
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            .userprofileInfo {
+                display: flex;
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                place-content: center;
+                gap: 15px;
+                text-align: center;
+
+                .userfullname,
+                .userWalletAmount {
+                    display: grid;
+                    gap: 5px;
+
+                    h3,
+                    p {
+                        color: #213f7d;
+                    }
+
+                    h3 {
+                        font-size: 18px;
+                    }
+
+                    p {
+                        font-size: 14px;
+                    }
+                }
+
+                .userTier {
+                    display: grid;
+                    gap: 5px;
+                    .userTierRating {
+                        .ratingFilledIcon,
+                        .ratingOutlinedIcon {
+                            width: 20px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .userProfileNav {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            overflow-x: scroll;
+            margin-top: 30px;
+
+            &::-webkit-scrollbar {
+                appearance: none;
+                height: 0;
+            }
+
+            a {
+                display: block;
+                width: max-content;
+                padding: 0 10px;
+                text-decoration: none;
+                font-size: 14px;
+            }
+
+            .active {
+                color: #39cdcc;
+            }
+
+            .general {
+                text-align: center;
+                border-bottom: 2px solid #39cdcc;
+                padding-bottom: 5px;
+            }
+        }
+    }
+
+    @media only screen and (min-width: 650px) and (max-width: 700px) {
+        .userprofile {
+            flex-direction: row !important;
+            padding: 30px 20px !important;
+            width: 100%;
+        }
+
+        .userprofileInfo {
+            display: grid;
+            grid-template-columns: auto auto;
+            gap: 20px;
+            row-gap: 30px;
+            width: fit-content;
+            // display: grid;
+            // grid-template-columns: auto auto auto;
+        }
+        .userTier {
+            display: grid;
+
+            .userTierRating {
+                display: flex;
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (min-width: 650px) and (max-width: 900px) {
+        .userprofile {
+            flex-direction: row;
+            padding: 0 40px;
+            width: 100%;
+            gap: 40px;
+            margin-top: 30px;
+            align-items: center;
+        }
+
+        .userprofileInfo {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 20px;
+            width: fit-content;
+            // display: grid;
+            // grid-template-columns: auto auto auto;
+        }
+
+        
+        .userfullname,
+        .userWalletAmount {
+            display: grid;
+            gap: 5px;
+
+            h3,
+            p {
+                color: #213f7d;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+
+        .userPersonalInfoDetails,
+        .socialsDetails {
+            grid-template-columns: auto auto auto;
+            row-gap: 40px !important;
+        }
+
+        .userEducationEmploymentDetails,
+        .guarantorDetails {
+            grid-template-columns: auto auto auto;
+            grid-template-rows: auto;
+        }
+
+        .userTier {
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #545f7d35;
+            border-left: 1px solid #545f7d35;
+            padding: 0 20px;
+
+            .userTierRating {
+                display: flex;
+                svg {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+
+        .userProfileNav {
+            width: 90%;
+            margin: auto;
+            margin-top: 40px;
+        }
+    }
+
+    @media only screen and (min-width: 900px) and (max-width: 1024px) {
+        .userPersonalInfoDetails,
+        .socialsDetails {
+            grid-template-columns: auto auto auto;
+            row-gap: 40px !important;
+        }
+
+        .userprofileImg {
+            width: 100px;
+            height: 100px;
+        }
+
+        .userTier {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            border-right: 1px solid #545f7d35;
+            border-left: 1px solid #545f7d35;
+            padding: 0 20px;
+            .userTierRating {
+                .ratingFilledIcon,
+                .ratingOutlinedIcon {
+                    width: 20px;
+                }
+            }
+        }
+
+        .userEducationEmploymentDetails,
+        .guarantorDetails {
+            grid-template-columns: auto auto auto auto;
+            grid-template-rows: auto;
+        }
+        .userProfileNav {
+            width: 90%;
+            margin: auto;
+            margin-top: 40px;
+        }
+
+        .userprofile {
+            align-items: center;
+        }
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 1024px) {
+    main {
+        width: 95%;
+        margin: auto;
+        overflow-y: auto;
+        padding: 40px 0;
+        
+        &::-webkit-scrollbar {
+            appearance: none;
+        }
+    }
+
+    .userTier {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        border-right: 1px solid #545f7d35;
+        border-left: 1px solid #545f7d35;
+        padding: 0 20px;
+        .userTierRating {
+            .ratingFilledIcon,
+            .ratingOutlinedIcon {
+                width: 20px;
+            }
+        }
+    }
+
+    .userfullname,
+    .userWalletAmount {
+        display: grid;
+        gap: 5px;
+
+        h3,
+        p {
+            color: #213f7d;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .userprofileImg {
+        width: 100px;
+        height: 100px;
+    }
+
+    .userPersonalInfoDetails,
+    .socialsDetails {
+        grid-template-columns: auto auto auto;
+        row-gap: 40px !important;
+    }
+
+    .userEducationEmploymentDetails,
+    .guarantorDetails {
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto;
+    }
+
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+    main {
+        width: 95%;
+        margin: auto;
+        overflow-y: auto;
+        padding: 40px 0;
+        
+        &::-webkit-scrollbar {
+            appearance: none;
+        }
     }
     
+    .userPersonalInfoDetails {
+        grid-template-columns: auto auto auto auto;
+        row-gap: 40px !important;
+    }
+
+    .userprofile {
+        align-items: center;
+        padding: 0 40px !important;
+    }
+
+
+    .userTier {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        border-right: 1px solid #545f7d35;
+        border-left: 1px solid #545f7d35;
+        padding: 0 20px;
+        .userTierRating {
+            .ratingFilledIcon,
+            .ratingOutlinedIcon {
+                width: 20px;
+            }
+        }
+    }
+
+    .userfullname,
+    .userWalletAmount {
+        display: grid;
+        gap: 5px;
+
+        h3,
+        p {
+            color: #213f7d;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .socialsDetails {
+        grid-template-columns: auto auto auto;
+        row-gap: 40px !important;
+    }
+
+    .userEducationEmploymentDetails,
+    .guarantorDetails {
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto;
+        row-gap: 40px !important;
+    }
+
+    .userProfileNav {
+        width: 90% !important;
+        margin: auto;
+    }
+
 }

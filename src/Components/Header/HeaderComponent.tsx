@@ -24,22 +24,28 @@ import { SettingsIcon } from "../Icons/Settings"
 import { PricingIcon } from "../Icons/Badge"
 import { ClipboardIcon } from "../Icons/Clipboard"
 import { useState } from "react"
+import { SignOutIcon } from "../Icons/Signout"
+import { TireIcon } from "../Icons/Tire"
 
 export const SideNavigation = ({ styles }: { styles: { [key: string]: string } }): JSX.Element => {
     return (
         <nav className={styles.sideMenu || styles.sideMenuDesktop}>
             <ul>
                 <li>
+                    <Link to={'/switch-org'}>
                     <BriefcaseIcon className={styles.briefcaseIcon} />
                     <span>
                         Switch Organization
                         <DropDownIcon className={styles.dropdownIcon} />
-                    </span>
+                        </span>
+                    </Link>
                 </li>
 
                 <li>
-                    <DashboardIcon className={styles.dashboardIcon} />
-                    Dashboard
+                    <Link to={'/dashboard'}>
+                        <DashboardIcon className={styles.dashboardIcon} />
+                        Dashboard
+                    </Link>
                 </li>
             </ul>
 
@@ -47,8 +53,10 @@ export const SideNavigation = ({ styles }: { styles: { [key: string]: string } }
                 <p>CUSTOMERS</p>
                 <ul>
                     <li>
+                        <Link to={'/dashboard/users'}>
                         <UsersIcon className={styles.usersIcon} />
-                        Users
+                            Users
+                        </Link>
                     </li>
                     <li>
                         <Guarantors className={styles.guarantorsIcon} />
@@ -137,6 +145,16 @@ export const SideNavigation = ({ styles }: { styles: { [key: string]: string } }
                     <li>
                         <ClipboardIcon className={styles.auditlogsIcon} />
                         Audit Logs
+                    </li>
+
+                    <li>
+                        <TireIcon className={styles.tireIcon} />
+                        System Messages
+                    </li>
+
+                    <li>
+                        <SignOutIcon className={styles.signoutIcon} />
+                        Logout
                     </li>
                 </ul>
             </div>

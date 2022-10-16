@@ -4,6 +4,7 @@ import Button from '../Button'
 import { BackButtonIcon } from '../Icons/Pagination'
 import { RatingFilledIcon, RatingOutlinedIcon } from '../Icons/Rating'
 import { UserAvatarSampleIcon } from '../Icons/Users'
+import UserInfo from './UserInfo'
 import styles from './styles/user.module.scss'
 
 export default function UserInfoComponent() {
@@ -81,210 +82,42 @@ export default function UserInfoComponent() {
             </div>
 
             <div className={styles.userExtraInfo}>
-                <div className={styles.userPersonalInfo}>
-                    <p>Personal Information</p>
-                    <div className={styles.userPersonalInfoDetails}>
-                        <div className={styles.fullname}>
-                            <p>FULLNAME</p>
-                            <h4>Grace Effiom</h4>
-                        </div>
-                        <div className={styles.phoneNumber}>
-                            <p>PHONE NUMBER</p>
-                            <h4>07060780922</h4>
-                        </div>
-                        <div className={styles.email}>
-                            <p>EMAIL ADDRESS</p>
-                            <h4>grace@gmail.com</h4>
-                        </div>
-                        <div className={styles.bvn}>
-                            <p>BVN</p>
-                            <h4>07060780922</h4>
-                        </div>
-                        <div className={styles.gender}>
-                            <p>GENDER</p>
-                            <h4>Female</h4>
-                        </div>
+                <UserInfo
+                    className={styles}
+                    personalInformation={{
+                        fullname: 'Oluwatobiloba Agunloye',
+                        email: 'oluwatobilobagunloye@gmail.com',
+                        residenceType: 'Parent’s Apartment',
+                        bvn: 0,
+                        phoneNumber: 0,
+                        maritalStatus: 'Single',
+                        children: 0,
+                        gender: 'Male',
 
-                        <div className={styles.maritalStatus}>
-                            <p>MARITAL STATUS</p>
-                            <h4>Single</h4>
-                        </div>
+                    }}
+                    educationAndEmployment={{
+                        educationLevel: 'B.SC',
+                        employmentStatus: 'Employed',
+                        employmentSector: 'FinTech',
+                        employmentDuration: 0,
+                        officeEmail: 'oluwatobilobagunloye@gmail.com',
+                        monthlyIncome: '₦200,000.00- ₦400,000.00',
+                        loanRepayment: 40000,
+                    }}
 
-                        <div className={styles.children}>
-                            <p>CHILDREN</p>
-                            <h4>None</h4>
-                        </div>
+                    socials={{
+                        twitter: '@grace_effiom',
+                        facebook: 'Grace Effiom',
+                        instagram: '@grace_effiom'
+                    }}
 
-                        <div className={styles.residence}>
-                            <p>TYPE OF RESIDENCE</p>
-                            <h4>Parent’s Apartment</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div className={styles.userPersonalInfo}>
-                    <p>Personal Information</p>
-                    <div className={styles.userPersonalInfoDetails}>
-                        <div className={styles.fullname}>
-                            <p>FULLNAME</p>
-                            <h4>Grace Effiom</h4>
-                        </div>
-                        <div className={styles.phoneNumber}>
-                            <p>PHONE NUMBER</p>
-                            <h4>07060780922</h4>
-                        </div>
-                        <div className={styles.email}>
-                            <p>EMAIL ADDRESS</p>
-                            <h4>grace@gmail.com</h4>
-                        </div>
-                        <div className={styles.bvn}>
-                            <p>BVN</p>
-                            <h4>07060780922</h4>
-                        </div>
-                        <div className={styles.gender}>
-                            <p>GENDER</p>
-                            <h4>Female</h4>
-                        </div>
-
-                        <div className={styles.maritalStatus}>
-                            <p>MARITAL STATUS</p>
-                            <h4>Single</h4>
-                        </div>
-
-                        <div className={styles.children}>
-                            <p>CHILDREN</p>
-                            <h4>None</h4>
-                        </div>
-
-                        <div className={styles.residence}>
-                            <p>TYPE OF RESIDENCE</p>
-                            <h4>Parent’s Apartment</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div className={styles.userPersonalInfo}>
-                    <p>Personal Information</p>
-                    <div className={styles.userPersonalInfoDetails}>
-                        <div className={styles.fullname}>
-                            <p>FULLNAME</p>
-                            <h4>Grace Effiom</h4>
-                        </div>
-                        <div className={styles.phoneNumber}>
-                            <p>PHONE NUMBER</p>
-                            <h4>07060780922</h4>
-                        </div>
-                        <div className={styles.email}>
-                            <p>EMAIL ADDRESS</p>
-                            <h4>grace@gmail.com</h4>
-                        </div>
-                        <div className={styles.bvn}>
-                            <p>BVN</p>
-                            <h4>07060780922</h4>
-                        </div>
-                        <div className={styles.gender}>
-                            <p>GENDER</p>
-                            <h4>Female</h4>
-                        </div>
-
-                        <div className={styles.maritalStatus}>
-                            <p>MARITAL STATUS</p>
-                            <h4>Single</h4>
-                        </div>
-
-                        <div className={styles.children}>
-                            <p>CHILDREN</p>
-                            <h4>None</h4>
-                        </div>
-
-                        <div className={styles.residence}>
-                            <p>TYPE OF RESIDENCE</p>
-                            <h4>Parent’s Apartment</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div className={styles.userPersonalInfo}>
-                    <p>Personal Information</p>
-                    <div className={styles.userPersonalInfoDetails}>
-                        <div className={styles.fullname}>
-                            <p>FULLNAME</p>
-                            <h4>Grace Effiom</h4>
-                        </div>
-                        <div className={styles.phoneNumber}>
-                            <p>PHONE NUMBER</p>
-                            <h4>07060780922</h4>
-                        </div>
-                        <div className={styles.email}>
-                            <p>EMAIL ADDRESS</p>
-                            <h4>grace@gmail.com</h4>
-                        </div>
-                        <div className={styles.bvn}>
-                            <p>BVN</p>
-                            <h4>07060780922</h4>
-                        </div>
-                        <div className={styles.gender}>
-                            <p>GENDER</p>
-                            <h4>Female</h4>
-                        </div>
-
-                        <div className={styles.maritalStatus}>
-                            <p>MARITAL STATUS</p>
-                            <h4>Single</h4>
-                        </div>
-
-                        <div className={styles.children}>
-                            <p>CHILDREN</p>
-                            <h4>None</h4>
-                        </div>
-
-                        <div className={styles.residence}>
-                            <p>TYPE OF RESIDENCE</p>
-                            <h4>Parent’s Apartment</h4>
-                        </div>
-                    </div>
-                </div>
-
-                <div className={styles.userPersonalInfo}>
-                    <p>Personal Information</p>
-                    <div className={styles.userPersonalInfoDetails}>
-                        <div className={styles.fullname}>
-                            <p>FULLNAME</p>
-                            <h4>Grace Effiom</h4>
-                        </div>
-                        <div className={styles.phoneNumber}>
-                            <p>PHONE NUMBER</p>
-                            <h4>07060780922</h4>
-                        </div>
-                        <div className={styles.email}>
-                            <p>EMAIL ADDRESS</p>
-                            <h4>grace@gmail.com</h4>
-                        </div>
-                        <div className={styles.bvn}>
-                            <p>BVN</p>
-                            <h4>07060780922</h4>
-                        </div>
-                        <div className={styles.gender}>
-                            <p>GENDER</p>
-                            <h4>Female</h4>
-                        </div>
-
-                        <div className={styles.maritalStatus}>
-                            <p>MARITAL STATUS</p>
-                            <h4>Single</h4>
-                        </div>
-
-                        <div className={styles.children}>
-                            <p>CHILDREN</p>
-                            <h4>None</h4>
-                        </div>
-
-                        <div className={styles.residence}>
-                            <p>TYPE OF RESIDENCE</p>
-                            <h4>Parent’s Apartment</h4>
-                        </div>
-                    </div>
-                </div>
+                    guarantor={{
+                        fullName: 'Debby Ogana',
+                        phoneNumber: '07060780922',
+                        email: 'debby@gmail.com',
+                        relationship: 'Sister'
+                    }}
+                />
             </div>
         </main>
     )

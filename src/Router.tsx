@@ -55,8 +55,11 @@ const AppRouter = createBrowserRouter([
             {
                 path: '',
                 element: <DashboardPage />
-            }
-            ,
+            },
+            {
+                path: 'users',
+                element: <DashboardPage />
+            },
             {
                 path: 'user/:userID',
                 element: <UserInfoPage />
