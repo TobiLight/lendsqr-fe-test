@@ -28,7 +28,7 @@ import { SignOutIcon } from "../Icons/Signout"
 import { TireIcon } from "../Icons/Tire"
 import { useDispatch, useSelector } from "react-redux"
 import { UserType } from "../../helpers/types"
-import { logout, setAuthUser } from "../../features/auth/authSlice"
+import { logout } from "../../features/auth/authSlice"
 import localforage from "localforage"
 
 export const SideNavigation = ({ styles }: { styles: { [key: string]: string } }): JSX.Element => {
@@ -40,6 +40,7 @@ export const SideNavigation = ({ styles }: { styles: { [key: string]: string } }
             return navigate('/login')
         }
     }, [loggedOut])
+
     return (
         <nav className={styles.sideMenu || styles.sideMenuDesktop}>
             <ul>
@@ -193,7 +194,7 @@ export const MobileHeader = (): JSX.Element => {
                 <div className={styles.right}>
                     <div className={styles.avatarWrapper}>
                         <div className={styles.avatar}>
-                            <img src={avatar} alt="User Avatar" />
+                            <img src={user && user.profile?.avatar} alt="User Avatar" />
                         </div>
                         <div className={styles.username}>
                             {user && <p>{user.profile?.firstName || ''}</p>}
@@ -237,7 +238,7 @@ export const Header = (): JSX.Element => {
                     <BellIcon className={styles.bellIcon} />
                     <div className={styles.avatarWrapper}>
                         <div className={styles.avatar}>
-                            <img src={avatar} alt="User Avatar" />
+                            <img src={user && user.profile?.avatar} alt="User Avatar" />
                         </div>
                         <div className={styles.username}>
                             {user && <p>{user.profile?.firstName || ''}</p>}

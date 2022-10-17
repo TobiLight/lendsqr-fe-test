@@ -98,7 +98,6 @@ const AppRouter = createBrowserRouter([
         loader: async ({ request }) => {
             try {
                 let data = await localforage.getItem('user') as Partial<UserType[]>
-                console.log(data);
                 return json({ user: data })
             } catch (err) {
                 return json({ error: err }, { status: 400 })
@@ -115,7 +114,19 @@ const AppRouter = createBrowserRouter([
             },
             {
                 path: 'user/:userID',
-                element: <UserInfoPage />
+                element: <UserInfoPage />,
+                loader: async ({ request, params }) => {
+                    // grab params from url then check localstorage or redux
+                    const userID = params['userID']
+                    try {
+                        let users = await localforage.getItem('users') as UserType[]
+                        let user = users.filter(user => userID === user.id)
+                        return json({ user: user[0] }, { status: 200 })
+                    } catch (err) {
+                        return json({ error: err }, { status: 400 })
+                    }
+
+                }
             }
         ],
         // errorElement: (

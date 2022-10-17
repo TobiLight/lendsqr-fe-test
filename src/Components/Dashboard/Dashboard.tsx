@@ -28,16 +28,17 @@ const DashboardInfo = ({ className, icon, statsstyles, text, countstyles, count 
 
 export default function Dashboard() {
     const [showFilter, setShowFilter] = useState<boolean>()
-
+    const data = useSelector(state => state) as { users: { data: UserType[] } }
+    console.log(data.users.data.length)
     return (
         <div className={styles.dashboardContainer}>
             <p style={{ marginBottom: 50 }}>Users</p>
             <div className={styles.usersInfo}>
                 <DashboardInfo className={styles.users} icon={<UsersEllipseIcon className={styles.userellipseIcon} />
-                } text={'USERS'} count={'2,453'} statsstyles={styles.usersStat} countstyles={styles.usersCount} />
+                } text={'USERS'} count={data.users.data.length < 999 ? `${data.users.data.length}` : '2,453'} statsstyles={styles.usersStat} countstyles={styles.usersCount} />
 
                 <DashboardInfo className={styles.active} icon={<UsersEllipseIcon2 className={styles.userellipseIcon2} />
-                } text={'ACTIVE USERS'} count={'2,453'} statsstyles={styles.activeStats} countstyles={styles.activeCount} />
+                } text={'ACTIVE USERS'} count={data.users.data.length < 999 ? `${data.users.data.length}` : '2,453'} statsstyles={styles.activeStats} countstyles={styles.activeCount} />
 
                 <DashboardInfo className={styles.usersloans} icon={<LoanIcon className={styles.loanIcon} />
                 } text={'USERS WITH LOANS'} count={'12,453'} statsstyles={styles.usersloansStats} countstyles={styles.usersloansCount} />

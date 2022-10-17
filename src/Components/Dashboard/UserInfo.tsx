@@ -3,23 +3,23 @@ import React from 'react'
 // Types for UserInfo component. These can be extended to whatever you want
 type PersonalInfoType = {
     fullname: string
-    phoneNumber: number
+    phoneNumber: string
     email: string
-    bvn: number
-    gender: 'Male' | 'Female' | 'Other'
+    bvn: string
+    gender: string
     maritalStatus: 'Single' | 'Married' | 'Divorced' | 'Widowed'
     children: number
     residenceType: string
 }
 
 type EducationEmploymentType = {
-    educationLevel: 'B.SC' | 'Masters' | 'PhD' | 'Undergraduate' | 'Postgraduate'
-    employmentStatus: 'Employed' | 'Unemployed' | 'Intern'
-    employmentSector: 'FinTech' | 'AI' | 'Health' | 'Tech' | 'Agriculture'
-    employmentDuration: number
+    educationLevel: string
+    employmentStatus: string
+    employmentSector: string
+    employmentDuration: string
     officeEmail: string
-    monthlyIncome: '₦50,000.00- ₦100,000.00' | '₦200,000.00- ₦400,000.00' | '₦400,000.00- ₦1,000,000,000.00'
-    loanRepayment: number
+    monthlyIncome: Array<string>
+    loanRepayment: string
 }
 
 type SocialsType = {
@@ -49,7 +49,7 @@ const PersonalInformation = ({ fullname, email, bvn, maritalStatus, gender, resi
 }): JSX.Element => {
     return (
         <div className={`${className.userPersonalInfo}`}>
-            <p>Perosnal Information</p>
+            <p style={{ marginTop: 20 }}>Perosnal Information</p>
             <div className={className.userPersonalInfoDetails}>
                 <div className={className.fullname}>
                     <p>FULLNAME</p>
@@ -122,7 +122,7 @@ const EducationEmployment = ({ educationLevel, employmentDuration, employmentSec
 
                 <div className={className.monthlyIncome}>
                     <p>MONTHLY INCOME</p>
-                    <h4>{monthlyIncome}</h4>
+                    <h4>₦{monthlyIncome[0]} - {monthlyIncome[1]}</h4>
                 </div>
 
                 <div className={className.loanRepayment}>

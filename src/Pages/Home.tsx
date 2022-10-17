@@ -5,18 +5,16 @@ import { UserType } from '../helpers/types'
 import { setUsers } from '../features/user/usersSlice'
 
 export default function Home(): JSX.Element {
-    const data = useLoaderData() as { users: Array<{ [key: string]: any }> }
+    const data = useLoaderData() as { users: UserType[] }
     const [loading, setLoading] = useState(true)
     const dispatch = useDispatch()
-    const fetcher = useFetcher()
 
-    // useEffect(() => {
-    //     console.log(fetcher.state);
-    //     if (data.users) {
-    //         setLoading(false)
-    //         dispatch(setUsers({ ...data.users }))
-    //     }
-    // }, [data])
+    useEffect(() => {
+        if (data.users) {
+            setLoading(false)
+            dispatch(setUsers({ data: [...data.users] }))
+        }
+    }, [data])
 
     return !data ? <p>Loading app...</p> : (<div className="homepage">
         <h1>Hello World</h1>

@@ -23,7 +23,7 @@ export default function LoginComponent() {
     useEffect(() => {
         localforage.getItem<UserType[]>('users').then(users => {
             if (users !== null)
-                return dispatch(setUsers([...users]))
+                return dispatch(setUsers({ data: [...data.users] }))
         }).catch(err => err)
 
 
@@ -40,7 +40,7 @@ export default function LoginComponent() {
         if (action && action.user) {
             dispatch(login({ email: action.user.email }))
             dispatch(setAuthUser({ ...action.user }))
-            dispatch(setUsers([...data.users]))
+            dispatch(setUsers({ data: [...data.users] }))
             return navigate('/dashboard')
         }
     }, [dispatch, action])

@@ -3,11 +3,34 @@ export type UserType = {
     email: string
     username?: string
     phoneNumber?: string
+    orgName?: string
+    accountBalance?: string
     profile?: {
         firstName?: string
         lastName?: string
         avatar?: string
         gender?: string
-        bvn: string
+        bvn?: string
+    }
+    education?: {
+        level?: string
+        employmentStatus?: string
+        sector?: string
+        duration?: string
+        officeEmail?: string
+        monthlyIncome?: Array<string>
+        loanRepayment?: string
+    }
+    socials?: {
+        facebook?: string
+        twitter?: string
+        instagram?: string
+    }
+    guarantor?: {
+        firstName: string
+        lastName: string
+        address: string
+        phoneNumber: string
+        gender: string
     }
 }

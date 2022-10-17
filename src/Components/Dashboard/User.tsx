@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
+import { UserType } from '../../helpers/types'
 import Button from '../Button'
 import { BackButtonIcon } from '../Icons/Pagination'
 import { RatingFilledIcon, RatingOutlinedIcon } from '../Icons/Rating'
@@ -8,7 +9,8 @@ import styles from './styles/user.module.scss'
 import UserInfo from './UserInfo'
 
 export default function UserInfoComponent() {
-
+    const { user } = useLoaderData() as { user: UserType }
+    console.log(user)
     return (
         <main>
             <Link to="#" className={styles.backLink}>
@@ -33,8 +35,8 @@ export default function UserInfoComponent() {
 
                             <div className={styles.userprofileInfo}>
                                 <div className={styles.userfullname}>
-                                    <h3>Grace Effiom</h3>
-                                    <p>LSQFf587g90</p>
+                                    <h3>{user.profile?.firstName} {user.profile?.lastName}</h3>
+                                    <p>{user.orgName}</p>
                                 </div>
 
                                 <div className={styles.userTier}>
@@ -47,7 +49,7 @@ export default function UserInfoComponent() {
                                 </div>
 
                                 <div className={styles.userWalletAmount}>
-                                    <h3>₦200,000.00</h3>
+                                    <h3>₦{user.accountBalance}</h3>
                                     <p>9912345678/Providus Bank</p>
                                 </div>
                             </div>
@@ -86,35 +88,35 @@ export default function UserInfoComponent() {
                 <UserInfo
                     className={styles}
                     personalInformation={{
-                        fullname: 'Oluwatobiloba Agunloye',
-                        email: 'oluwatobilobagunloye@gmail.com',
+                        fullname: user.profile?.firstName + ' ' + user.profile?.lastName,
+                        email: user.email,
                         residenceType: 'Parent’s Apartment',
-                        bvn: 0,
-                        phoneNumber: 0,
+                        bvn: user.profile?.bvn ?? '0',
+                        phoneNumber: user.phoneNumber || '',
                         maritalStatus: 'Single',
                         children: 0,
-                        gender: 'Male',
+                        gender: user.profile?.gender || 'Other',
 
                     }}
                     educationAndEmployment={{
-                        educationLevel: 'B.SC',
-                        employmentStatus: 'Employed',
-                        employmentSector: 'FinTech',
-                        employmentDuration: 0,
-                        officeEmail: 'oluwatobilobagunloye@gmail.com',
-                        monthlyIncome: '₦200,000.00- ₦400,000.00',
-                        loanRepayment: 40000,
+                        educationLevel: user.education?.level || 'B.Sc',
+                        employmentStatus: user.education?.employmentStatus || '',
+                        employmentSector: user.education?.sector || '',
+                        employmentDuration: user.education?.duration || '0',
+                        officeEmail: user.education?.officeEmail || '',
+                        monthlyIncome: user.education?.monthlyIncome || ['50,000,000', '100,000,000'],
+                        loanRepayment: user.education?.loanRepayment || '40000',
                     }}
 
                     socials={{
-                        twitter: '@grace_effiom',
-                        facebook: 'Grace Effiom',
-                        instagram: '@grace_effiom'
+                        twitter: user.socials?.twitter,
+                        facebook: user.socials?.facebook,
+                        instagram: user.socials?.instagram
                     }}
 
                     guarantor={{
-                        fullName: 'Debby Ogana',
-                        phoneNumber: '07060780922',
+                        fullName: user.guarantor?.firstName + ' ' + user.guarantor?.lastName,
+                        phoneNumber: user.guarantor?.phoneNumber || '',
                         email: 'debby@gmail.com',
                         relationship: 'Sister'
                     }}

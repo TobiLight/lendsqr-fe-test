@@ -1,16 +1,18 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { UserType } from '../../helpers/types'
 
-const initialState: Array<Partial<UserType>> = []
+const initialState: { data: Array<Partial<UserType>> } = {
+    data: []
+}
 
 export const userSlice = createSlice({
     name: 'users',
     initialState,
     reducers: {
-        setUsers: (state, action: PayloadAction<Array<Partial<UserType>>>) => {
+        setUsers: (state, action: PayloadAction<{ data: Array<Partial<UserType>> }>) => {
             return {
-                ...state,
-                ...action.payload,
+                ...state.data,
+                ...action.payload
             }
         },
     }

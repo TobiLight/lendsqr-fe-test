@@ -21,7 +21,7 @@ export default function DashboardLayout() {
             if (user === null) {
                 return navigate('/login', { replace: true })
             }
-            dispatch(setUsers([...users]))
+            dispatch(setUsers({ data: [...users] }))
             return dispatch(setAuthUser({ ...user }))
         }
         checkStorage()
