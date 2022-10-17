@@ -130,6 +130,7 @@
                     @include flex-gap(10px);
                     font-size: 16px;
                     color: #213f7d;
+                    cursor: pointer;
 
                     a {
                         color: #213f7d;
@@ -209,6 +210,7 @@
                         display: flex;
                         color: #21407d87;
                         @include flex-gap(12px);
+                        cursor: pointer;
 
                         a {
                             color: #21407d87;
@@ -276,6 +278,7 @@
                         display: flex;
                         color: #21407d87;
                         @include flex-gap(12px);
+                        cursor: pointer;
 
                         a {
                             color: #21407d87;
@@ -358,6 +361,7 @@
                         display: flex;
                         color: #21407d87;
                         @include flex-gap(12px);
+                        cursor: pointer;
 
                         a {
                             color: #21407d87;
