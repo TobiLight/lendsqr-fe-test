@@ -27,8 +27,9 @@ This project is bootstrapped using create-react-app (cra)
 
 
 ### Page URLs
-- / - landing page
-- /dashboard - loads dashboard with list of users
+- / - Landing page
+- /login Login page [NOTE: Use 'admin' as password to login. For e.g, email: 'Maverick.Hyatt83@gmail.com', password: 'admin']
+- /dashboard - Loads dashboard with list of users
 - /users - (same as above)
 - /user/:userID - loads a single user information on the dashboard using the query parameter (userID)
 
