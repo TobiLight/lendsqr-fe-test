@@ -1,6 +1,6 @@
 import styles from "./styles/header.module.scss"
 import logo from '../../Assets/Images/lendsqr-logo.png'
-import { Form, Link } from "react-router-dom"
+import { Form, Link, useNavigate } from "react-router-dom"
 import Input from "../Input"
 import { SearchIcon } from "../Icons/Search"
 import Button from "../Button"
@@ -23,11 +23,23 @@ import { ServicesIcon } from "../Icons/Services"
 import { SettingsIcon } from "../Icons/Settings"
 import { PricingIcon } from "../Icons/Badge"
 import { ClipboardIcon } from "../Icons/Clipboard"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { SignOutIcon } from "../Icons/Signout"
 import { TireIcon } from "../Icons/Tire"
+import { useDispatch, useSelector } from "react-redux"
+import { UserType } from "../../helpers/types"
+import { logout, setAuthUser } from "../../features/auth/authSlice"
+import localforage from "localforage"
 
 export const SideNavigation = ({ styles }: { styles: { [key: string]: string } }): JSX.Element => {
+    const dispatch = useDispatch()
+    const [loggedOut, setLoggedOut] = useState(false)
+    const navigate = useNavigate()
+    useEffect(() => {
+        if (loggedOut) {
+            return navigate('/login')
+        }
+    }, [loggedOut])
     return (
         <nav className={styles.sideMenu || styles.sideMenuDesktop}>
             <ul>
@@ -152,7 +164,11 @@ export const SideNavigation = ({ styles }: { styles: { [key: string]: string } }
                         System Messages
                     </li>
 
-                    <li>
+                    <li onClick={() => {
+                        dispatch(logout())
+                        localforage.removeItem('user')
+                        setLoggedOut(true)
+                    }}>
                         <SignOutIcon className={styles.signoutIcon} />
                         Logout
                     </li>
@@ -164,6 +180,8 @@ export const SideNavigation = ({ styles }: { styles: { [key: string]: string } }
 
 export const MobileHeader = (): JSX.Element => {
     const [showSideMenu, setShowSideMenu] = useState<boolean>(false)
+    const { user } = useSelector<{ auth: UserType }>(state => state.auth) as { user: UserType }
+
 
     return (
         <header className={styles.mobileHeaderContainer}>
@@ -178,7 +196,7 @@ export const MobileHeader = (): JSX.Element => {
                             <img src={avatar} alt="User Avatar" />
                         </div>
                         <div className={styles.username}>
-                            <p>Adedeji</p>
+                            {user && <p>{user.profile?.firstName || ''}</p>}
                             <DropdownIconFilled className={styles.dropdownIconFilled} />
                         </div>
                     </div>
@@ -196,6 +214,8 @@ export const MobileHeader = (): JSX.Element => {
 }
 
 export const Header = (): JSX.Element => {
+    const { user } = useSelector<{ auth: UserType }>(state => state.auth) as { user: UserType }
+
     return (
         <header className={styles.headerContainer}>
             <nav className={styles.header}>
@@ -220,7 +240,7 @@ export const Header = (): JSX.Element => {
                             <img src={avatar} alt="User Avatar" />
                         </div>
                         <div className={styles.username}>
-                            <p>Adedeji</p>
+                            {user && <p>{user.profile?.firstName || ''}</p>}
                             <DropdownIconFilled className={styles.dropdownIconFilled} />
                         </div>
                     </div>

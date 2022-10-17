@@ -1,56 +1,109 @@
 import axios from "axios";
-import { createBrowserRouter, json, Link } from "react-router-dom";
-import DashboardComponent from "./Components/Dashboard/DashboardComponent";
+import localforage from "localforage";
+import { useDispatch } from "react-redux";
+import { createBrowserRouter, json, Link, redirect, useRouteError, useRouteLoaderData } from "react-router-dom";
+import DashboardLayout from "./Components/Dashboard/Layout";
+import httprequest from "./helpers/httprequest";
+import { UserType } from "./helpers/types";
 import DashboardPage from "./Pages/Dashboard";
 import UserInfoPage from "./Pages/Dashboard/user";
+import Home from "./Pages/Home";
 import LoginPage from "./Pages/Login";
 import './Styles/global.scss'
 
+const LoginErrorBoundary = () => {
+    let error = useRouteError() as { data: string, status: number };
+    console.error(error.data);
+    // Uncaught ReferenceError: path is not defined
+    return (
+        <>
+            <div>Dang! {error.data}</div>;
+            <Link to="/login">Go back</Link>
+        </>
+    )
+}
+
+
 const AppRouter = createBrowserRouter([
     {
+        id: 'homepage',
         path: "/",
-        element: (
-            <div className="homepage">
-                <h1>Hello World</h1>
-                <span>Below are the designed pages. Navigate through any one of them</span>
-                <span>* <Link to="login" className="underline-wavy">Login</Link>
-                </span>
-                <span>* <Link to="dashboard" className="underline-wavy">Dashboard</Link>
-                </span>
-                <span>* <Link to="dashboard/users" className="underline-wavy">Users</Link>
-                </span>
-                <span>* <Link to="dashboard/user/100029287365456" className="underline-wavy">User Details Page</Link>
-                </span>
-                <p className="">
-                    This project is designed by Oluwatobiloba 😉
-                </p>
-            </div>
-        ),
+        loader: async () => {
+            // get list of users
+            const users = await localforage.getItem('users')
+
+            if (users !== null) {
+                return json({ users })
+            }
+
+            try {
+                console.log('loading users')
+                const request = await httprequest.get('/users')
+                localforage.setItem('users', request.data)
+                console.log('users list retrieved')
+                console.log(request.data)
+                return json({ users: request.data })
+            } catch (err: any) {
+                return json({ error: err.message }, { status: 400 })
+            }
+        },
+        element: <Home />,
     },
     {
         path: '/login',
         element: <LoginPage />,
+        errorElement: <LoginErrorBoundary />,
         action: async ({ request }) => {
-            console.log(localStorage.getItem('deletedID'))
             let form = await request.formData()
             let email = form.get('email')
-            console.log(email)
+
+
+            try {
+                let users = await localforage.getItem('users') as Array<{ [key: string]: any }>
+                let user = users.filter(user => email === user.email)
+                if (user === null || !user[0]) {
+                    return json({ error: 'Invalid login details' }, { status: 400 })
+                }
+
+                return localforage.setItem('user', { ...user[0], isLoggedIn: true }).then(value => {
+                    return json({ user: user[0] })
+                })
+
+            } catch (err) {
+                return json({ error: err }, { status: 400 })
+            }
         },
         loader: async ({ request }) => {
-            const usersFromLS = JSON.parse(JSON.stringify(localStorage.getItem('users'))) as [{ id: string | number }]
+            const users = await localforage.getItem('users')
 
-            if (usersFromLS.length > 0) {
-                localStorage.removeItem('users')
+            if (users !== null) {
+                return json({ users })
             }
 
-            let users = await axios.get('https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1/users')
-            localStorage.setItem('users', { ...users.data })
-            return json({ users: users.data })
+            try {
+                console.log('loading users')
+                const request = await httprequest.get('/users')
+                localforage.setItem('users', request.data)
+                console.log('users list retrieved')
+                console.log(request.data)
+                return json({ users: request.data })
+            } catch (err: any) {
+                return json({ error: err.message }, { status: 400 })
+            }
         }
     },
     {
         path: '/dashboard',
-        element: <DashboardComponent />,
+        element: <DashboardLayout />,
+        loader: async ({ request }) => {
+            try {
+                let data = await localforage.getItem('user') as Partial<UserType[]>
+                console.log(data);
+                return json({ user: data })
+            } catch (err) {
+                return json({ error: err }, { status: 400 })
+            }
+        },
         children: [
             {
                 path: '',
@@ -64,7 +117,10 @@ const AppRouter = createBrowserRouter([
                 path: 'user/:userID',
                 element: <UserInfoPage />
             }
-        ]
+        ],
+        // errorElement: (
+        //     <p>Oops</p>
+        // )
     }
 ]);
 

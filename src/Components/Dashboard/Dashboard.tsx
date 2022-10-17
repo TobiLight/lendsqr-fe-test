@@ -1,5 +1,7 @@
 import { ReactNode, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Form, Link } from 'react-router-dom'
+import { UserType } from '../../helpers/types'
 import Button from '../Button'
 import { CalendarIcon } from '../Icons/Calendar'
 import { FilterIcon } from '../Icons/Filter'
@@ -26,6 +28,7 @@ const DashboardInfo = ({ className, icon, statsstyles, text, countstyles, count 
 
 export default function Dashboard() {
     const [showFilter, setShowFilter] = useState<boolean>()
+
     return (
         <div className={styles.dashboardContainer}>
             <p style={{ marginBottom: 50 }}>Users</p>

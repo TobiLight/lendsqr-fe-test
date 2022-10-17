@@ -4,10 +4,11 @@ import Button from '../Button'
 import { BackButtonIcon } from '../Icons/Pagination'
 import { RatingFilledIcon, RatingOutlinedIcon } from '../Icons/Rating'
 import { UserAvatarSampleIcon } from '../Icons/Users'
-import UserInfo from './UserInfo'
 import styles from './styles/user.module.scss'
+import UserInfo from './UserInfo'
 
 export default function UserInfoComponent() {
+
     return (
         <main>
             <Link to="#" className={styles.backLink}>

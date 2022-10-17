@@ -3,7 +3,7 @@ import { ReactNode } from "react"
 type Props = {
     btnText: string | ReactNode
     type: "button" | "submit" | "reset" | undefined
-    handleClick: React.MouseEventHandler<HTMLButtonElement> | undefined
+    handleClick?: React.MouseEventHandler<HTMLButtonElement>
     children?: ReactNode
 } & Partial<HTMLButtonElement>
 
