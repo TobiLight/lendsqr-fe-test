@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { Link, useFetcher, useLoaderData } from 'react-router-dom'
+import { Link, useLoaderData } from 'react-router-dom'
 import { UserType } from '../helpers/types'
 import { setUsers } from '../features/user/usersSlice'
 
