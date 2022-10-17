@@ -12,6 +12,7 @@ import { SavingsIcon } from '../Icons/Savings'
 import { UsersEllipseIcon, UsersEllipseIcon2 } from '../Icons/Users'
 import Input from '../Input'
 import styles from './styles/dashboard.module.scss'
+import moment from 'moment'
 
 const DashboardInfo = ({ className, icon, statsstyles, text, countstyles, count }: { className: string, icon: ReactNode, text: string, count: string, statsstyles: string, countstyles: string }) => {
     return (
@@ -96,7 +97,7 @@ export default function Dashboard() {
                                         </td>
                                         <td>{user.email}</td>
                                         <td>{user.phoneNumber}</td>
-                                        <td>May 15, 2020 10:00 AM</td>
+                                        <td>{moment(user.createdAt).format('MMMM Do, YYYY hh:mm A')}</td>
                                         {Number(user.id) <= 3 ?
                                             <td>
                                                 <span className={styles.pending}>Pending</span>
