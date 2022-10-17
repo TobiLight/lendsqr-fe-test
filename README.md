@@ -1,3 +1,5 @@
+This project is bootstrapped using create-react-app (cra)
+
 
 ## Overview of Lendqr Project
 1. Build the 4 pages Login, Dashboard, User page, User details page
