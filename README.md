@@ -6,9 +6,12 @@
 3. Use local storage or indexedDB to store and retrieve user details on the user details page.
 4. The page must be mobile responsive
 
-#### Technology Used:
+#### Technologies Used
 - React
 - Redux
 - Axios
 - SCSS
 - localforage
+
+#### Install packages using
+```npm i```
