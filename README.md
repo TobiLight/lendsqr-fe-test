@@ -15,6 +15,12 @@
 ### Install packages using
 ```npm i```
 
+### Page URLs
+- / - landing page
+- /dashboard - loads dashboard with list of users
+- /users - (same as above)
+-/user/:userID - loads a single user information on the dashboard using the query parameter (userID)
+
 ### Project Structure
 - src
     - app (contains redux store file)
@@ -23,5 +29,6 @@
     - helpers (contains axios base)
     - Pages (contains active pages for this project)
     - Styles (contains global styles for the project)
+    - Routers.tsx (contains all the app routes)
 
 - ![Project Structure](projstructure.PNG?raw=true "Project Structure")
