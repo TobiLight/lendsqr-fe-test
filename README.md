@@ -17,7 +17,7 @@
 
 ### Project Structure
 - src
-    -- app (contains redux store file)
+    - app (contains redux store file)
     - Components (contains reusable components, and styles)
     - features (contains redux slices [actions and reducers])
     - helpers (contains axios base)
