@@ -19,7 +19,7 @@
 - / - landing page
 - /dashboard - loads dashboard with list of users
 - /users - (same as above)
--/user/:userID - loads a single user information on the dashboard using the query parameter (userID)
+- /user/:userID - loads a single user information on the dashboard using the query parameter (userID)
 
 ### Project Structure
 - src
