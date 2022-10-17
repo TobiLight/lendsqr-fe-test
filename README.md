@@ -17,7 +17,10 @@
 
 ### Project Structure
 - src
--- app (contains redux store file)
--- Components (contains reusable components and Layout)
--- features (contains redux slices [actions and reducers])
+    -- app (contains redux store file)
+    - Components (contains reusable components, and styles)
+    - features (contains redux slices [actions and reducers])
+    - helpers (contains axios base)
+    - Pages (contains active pages for this project)
+    - Styles (contains global styles for the project)
 ![Project Structure](projstructure.PNG?raw=true "Project Structure")
