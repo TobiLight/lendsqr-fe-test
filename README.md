@@ -5,6 +5,8 @@
 3. Use local storage or indexedDB to store and retrieve user details on the user details page.
 4. The page must be mobile responsive
 
+
+
 ### Technologies Used
 - React - (UI & Logic)
 - Redux - (State Management)
@@ -47,3 +49,9 @@
 
 ### NOTE
 If you want to run the project on your local machine, you need to create a .env file and it should contain REACT_APP_APP_URL. For e.g. REACT_APP_API_URL = 'apiurlshouldbehere'
+
+
+## TODOS
+Although, the todos are minor but they are:
+- cleanup css file for user (i.e, dashboard.module.scss). it has some duplicated code in it
+- write different tests for the app (honestly, i did not have enough time to do this as i quickly tried to finish this app within a short timeframe)
