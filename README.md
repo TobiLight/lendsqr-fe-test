@@ -1,6 +1,6 @@
 # Lendsqr Application FrontEnd Test
 
-## Technology Used:
+#### Technology Used:
 - React
 - Redux
 - Axios
