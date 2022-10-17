@@ -89,7 +89,11 @@ export default function Dashboard() {
                                                 {user.userName}
                                             </Link>
                                         </td>
-                                        <td>{user.userName || ''}</td>
+                                        <td>
+                                            <Link to={`/dashboard/user/${user.id}`}>
+                                                {user.userName || ''}
+                                            </Link>
+                                        </td>
                                         <td>{user.email}</td>
                                         <td>{user.phoneNumber}</td>
                                         <td>May 15, 2020 10:00 AM</td>
