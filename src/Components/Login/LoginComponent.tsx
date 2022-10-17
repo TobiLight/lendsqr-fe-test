@@ -63,7 +63,7 @@ export default function LoginComponent() {
                             </h1>
                             <p>Enter details to login.</p>
                         </div>
-                        <Form method="post" onSubmit={event => { console.log('hi') }}>
+                        <Form method="post" onSubmit={event => { }}>
                             {error && <p style={{ color: 'red', fontSize: 14, fontWeight: 600, marginBottom: 20 }}>{error}</p>}
                             <div className={styles.inputInfo}>
                                 <label htmlFor="email">

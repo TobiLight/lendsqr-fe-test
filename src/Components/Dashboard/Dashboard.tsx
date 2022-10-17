@@ -82,7 +82,6 @@ export default function Dashboard() {
                         </thead>
                         <tbody>
                             {data.users.data.slice(0, 11).map(user => {
-                                console.log(user);
                                 return (
                                     <tr key={user.id}>
                                         <td>{user.orgName}</td>

@@ -116,7 +116,6 @@ const AppRouter = createBrowserRouter([
                 path: 'user/:userID',
                 element: <UserInfoPage />,
                 loader: async ({ request, params }) => {
-                    // grab params from url then check localstorage or redux
                     const userID = params['userID']
                     try {
                         let users = await localforage.getItem('users') as UserType[]
@@ -129,9 +128,6 @@ const AppRouter = createBrowserRouter([
                 }
             }
         ],
-        // errorElement: (
-        //     <p>Oops</p>
-        // )
     }
 ]);
 

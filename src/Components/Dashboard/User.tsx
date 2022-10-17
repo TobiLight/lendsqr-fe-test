@@ -10,7 +10,6 @@ import UserInfo from './UserInfo'
 
 export default function UserInfoComponent() {
     const { user } = useLoaderData() as { user: UserType }
-    console.log(user)
     return (
         <main>
             <Link to="#" className={styles.backLink}>
