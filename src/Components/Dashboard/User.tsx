@@ -16,7 +16,8 @@ export default function UserInfoComponent() {
         return (
             <main style={{ minHeight: 'inherit' }}>
                 <div style={styles}>
-                    <p style={{ fontSize: 16 }}>User not found!</p>
+                    <p style={{ fontSize: 16, marginBottom: 10 }}>User not found!</p>
+                    <Link to="/dashboard/users" style={{ textAlign: 'center' }}>Go back</Link>
                 </div>
             </main>
         )

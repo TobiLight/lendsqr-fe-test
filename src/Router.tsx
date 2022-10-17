@@ -105,10 +105,6 @@ const AppRouter = createBrowserRouter([
             {
                 path: 'user/:userID',
                 element: <UserInfoPage />,
-                errorElement: (
-                    <p>kjhg</p>
-                ),
-                hasErrorBoundary: true,
                 loader: async ({ params }) => {
                     const userID = params['userID']
                     try {
