@@ -95,9 +95,21 @@ export default function Dashboard() {
                                                 {user.userName || ''}
                                             </Link>
                                         </td>
-                                        <td>{user.email}</td>
-                                        <td>{user.phoneNumber}</td>
-                                        <td>{moment(user.createdAt).format('MMMM Do, YYYY hh:mm A')}</td>
+                                        <td>
+                                            <Link to={`/dashboard/user/${user.id}`}>
+                                                {user.email}
+                                            </Link>
+                                        </td>
+                                        <td>
+                                            <Link to={`/dashboard/user/${user.id}`}>
+                                                {user.phoneNumber}
+                                            </Link>
+                                        </td>
+                                        <td>
+                                            <Link to={`/dashboard/user/${user.id}`}>
+                                                {moment(user.createdAt).format('MMMM Do, YYYY hh:mm A')}
+                                            </Link>
+                                        </td>
                                         {Number(user.id) <= 3 ?
                                             <td>
                                                 <span className={styles.pending}>Pending</span>
