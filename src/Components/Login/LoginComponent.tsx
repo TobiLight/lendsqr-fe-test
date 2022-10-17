@@ -6,7 +6,7 @@ import { Form, Link, useActionData, useLoaderData, useNavigate } from 'react-rou
 import Input from '../Input'
 import Button from '../Button'
 import { useDispatch } from 'react-redux'
-import { login, setAuthUser } from '../../features/auth/authSlice'
+import { login } from '../../features/auth/authSlice'
 import { setUsers } from '../../features/user/usersSlice'
 import { UserType } from '../../helpers/types'
 import localforage from 'localforage'
@@ -39,7 +39,6 @@ export default function LoginComponent() {
 
         if (action && action.user) {
             dispatch(login({ email: action.user.email }))
-            dispatch(setAuthUser({ ...action.user }))
             dispatch(setUsers({ data: [...data.users] }))
             return navigate('/dashboard')
         }

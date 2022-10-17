@@ -1,7 +1,5 @@
-import axios from "axios";
 import localforage from "localforage";
-import { useDispatch } from "react-redux";
-import { createBrowserRouter, json, Link, redirect, useRouteError, useRouteLoaderData } from "react-router-dom";
+import { createBrowserRouter, json } from "react-router-dom";
 import DashboardLayout from "./Components/Dashboard/Layout";
 import httprequest from "./helpers/httprequest";
 import { UserType } from "./helpers/types";
@@ -11,17 +9,17 @@ import Home from "./Pages/Home";
 import LoginPage from "./Pages/Login";
 import './Styles/global.scss'
 
-const LoginErrorBoundary = () => {
-    let error = useRouteError() as { data: string, status: number };
-    console.error(error.data);
-    // Uncaught ReferenceError: path is not defined
-    return (
-        <>
-            <div>Dang! {error.data}</div>;
-            <Link to="/login">Go back</Link>
-        </>
-    )
-}
+// const LoginErrorBoundary = () => {
+//     let error = useRouteError() as { data: string, status: number };
+//     console.error(error.data);
+//     // Uncaught ReferenceError: path is not defined
+//     return (
+//         <>
+//             <div>Dang! {error.data}</div>;
+//             <Link to="/login">Go back</Link>
+//         </>
+//     )
+// }
 
 
 const AppRouter = createBrowserRouter([
@@ -29,9 +27,7 @@ const AppRouter = createBrowserRouter([
         id: 'homepage',
         path: "/",
         loader: async () => {
-            // get list of users
             const users = await localforage.getItem('users')
-
             if (users !== null) {
                 return json({ users })
             }
@@ -52,11 +48,14 @@ const AppRouter = createBrowserRouter([
     {
         path: '/login',
         element: <LoginPage />,
-        errorElement: <LoginErrorBoundary />,
         action: async ({ request }) => {
             let form = await request.formData()
             let email = form.get('email')
+            let password = form.get('password') as string
 
+            if (password.toLowerCase() !== 'admin') {
+                return json({ error: 'Invalid login details' }, { status: 400 })
+            }
 
             try {
                 let users = await localforage.getItem('users') as Array<{ [key: string]: any }>

@@ -1,16 +1,14 @@
 import localforage from 'localforage'
 import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { UserType } from '../../helpers/types'
 import { Header, MobileHeader, SideNavigation } from '../Header/HeaderComponent'
-import { login, setAuthUser } from '../../features/auth/authSlice'
 import styles from './styles/dashboard.module.scss'
 import { setUsers } from '../../features/user/usersSlice'
 
 
 export default function DashboardLayout() {
-    const { isLoggedIn } = useSelector<{ auth: { isLoggedIn: boolean } }>(state => state.auth) as { isLoggedIn: boolean }
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -22,7 +20,7 @@ export default function DashboardLayout() {
                 return navigate('/login', { replace: true })
             }
             dispatch(setUsers({ data: [...users] }))
-            return dispatch(setAuthUser({ ...user }))
+            return
         }
         checkStorage()
         return
