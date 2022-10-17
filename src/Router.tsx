@@ -9,17 +9,6 @@ import Home from "./Pages/Home";
 import LoginPage from "./Pages/Login";
 import './Styles/global.scss'
 
-// const LoginErrorBoundary = () => {
-//     let error = useRouteError() as { data: string, status: number };
-//     console.error(error.data);
-//     // Uncaught ReferenceError: path is not defined
-//     return (
-//         <>
-//             <div>Dang! {error.data}</div>;
-//             <Link to="/login">Go back</Link>
-//         </>
-//     )
-// }
 
 
 const AppRouter = createBrowserRouter([
@@ -99,6 +88,7 @@ const AppRouter = createBrowserRouter([
                 let data = await localforage.getItem('user') as Partial<UserType[]>
                 return json({ user: data })
             } catch (err) {
+                console.log('errrr', err);
                 return json({ error: err }, { status: 400 })
             }
         },
@@ -114,14 +104,20 @@ const AppRouter = createBrowserRouter([
             {
                 path: 'user/:userID',
                 element: <UserInfoPage />,
-                loader: async ({ request, params }) => {
+                loader: async ({ params }) => {
                     const userID = params['userID']
                     try {
                         let users = await localforage.getItem('users') as UserType[]
-                        let user = users.filter(user => userID === user.id)
-                        return json({ user: user[0] }, { status: 200 })
-                    } catch (err) {
-                        return json({ error: err }, { status: 400 })
+                        let user = users.filter(user => userID === user.id)[0]
+                        if (!user) {
+                            return json({ error: 'Invalid user', user: null }, { status: 404 })
+                        }
+                        return json({ user: user }, { status: 200 })
+                    } catch (err: any) {
+                        if (err.response) {
+                            return json({ error: 'not found' }, { status: 400 })
+                        }
+                        return json({ error: 'Not found' }, { status: 400 })
                     }
 
                 }

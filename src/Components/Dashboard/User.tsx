@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link, useLoaderData } from 'react-router-dom'
 import { UserType } from '../../helpers/types'
 import Button from '../Button'
@@ -9,7 +9,19 @@ import styles from './styles/user.module.scss'
 import UserInfo from './UserInfo'
 
 export default function UserInfoComponent() {
-    const { user } = useLoaderData() as { user: UserType }
+    const { user } = useLoaderData() as { user: UserType | null }
+
+    if (user === null) {
+        let styles = { display: 'grid', alignItems: 'center', justifyContent: 'center', padding: '50px 0' }
+        return (
+            <main style={{ minHeight: 'inherit' }}>
+                <div style={styles}>
+                    <p style={{ fontSize: 16 }}>User not found!</p>
+                </div>
+            </main>
+        )
+    }
+
     return (
         <main>
             <Link to="/dashboard/users" className={styles.backLink}>
@@ -28,7 +40,7 @@ export default function UserInfoComponent() {
                     <div className={styles.userdetails}>
                         <div className={styles.userprofile}>
                             <div className={styles.userprofileImg}>
-                                {user.profile?.avatar ? <img src={user.profile?.avatar} alt="Adeola's avatar" className={styles.userAvatar} /> :
+                                {user && user.profile?.avatar ? <img src={user.profile?.avatar} alt="Adeola's avatar" className={styles.userAvatar} /> :
                                     <UserAvatarSampleIcon className={styles.defaultUserIcon} />
                                 }
                             </div>

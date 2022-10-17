@@ -25,7 +25,7 @@ export default function Home(): JSX.Element {
         </span>
         <span>* <Link to="/dashboard/users" className="underline-wavy">Users</Link>
         </span>
-        <span>* <Link to="/dashboard/user/100029287365456" className="underline-wavy">User Details Page</Link>
+        <span>* <Link to="/dashboard/user/123" className="underline-wavy">User Details Page</Link>
         </span>
         <p className="">
             This project is developed by Oluwatobiloba 😉
