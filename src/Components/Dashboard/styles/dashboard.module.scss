@@ -75,6 +75,12 @@
                             tr {
                                 td {
                                     max-width: 150px;
+                                    text-decoration: none;
+
+                                    a {
+                                        color: #545f7d;
+                                        text-decoration: none;
+                                    }
                                 }
                             }
                         }
@@ -285,6 +291,11 @@
                                     font-size: 14px;
                                     color: #545f7d;
                                     font-size: 14px;
+
+                                    a {
+                                        color: #545f7d;
+                                        text-decoration: none;
+                                    }
 
                                     .moreIcon {
                                         width: 15px;
@@ -642,6 +653,11 @@
                                     width: 125px;
                                     color: #545f7d;
                                     font-size: 14px;
+
+                                    a {
+                                        color: #545f7d;
+                                        text-decoration: none;
+                                    }
 
                                     .moreIcon {
                                         width: 15px;
@@ -1007,9 +1023,9 @@
                                 align-items: center;
                                 @include flex-gap(10px);
                                 text-decoration: none;
-                                
+
                                 &:hover {
-                                    color:#213f7d;
+                                    color: #213f7d;
                                 }
                             }
 
@@ -1069,15 +1085,15 @@
                             color: #21407d87;
                             @include flex-gap(12px);
 
-                             a {
+                            a {
                                 color: #21407d87;
                                 display: flex;
                                 align-items: center;
                                 @include flex-gap(10px);
                                 text-decoration: none;
-                                
+
                                 &:hover {
-                                    color:#213f7d;
+                                    color: #213f7d;
                                 }
                             }
 
@@ -1152,15 +1168,15 @@
                             color: #21407d87;
                             @include flex-gap(12px);
 
-                             a {
+                            a {
                                 color: #21407d87;
                                 display: flex;
                                 align-items: center;
                                 @include flex-gap(10px);
                                 text-decoration: none;
-                                
+
                                 &:hover {
-                                    color:#213f7d;
+                                    color: #213f7d;
                                 }
                             }
 

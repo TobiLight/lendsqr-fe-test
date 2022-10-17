@@ -84,7 +84,11 @@ export default function Dashboard() {
                             {data.users.data.slice(0, 11).map(user => {
                                 return (
                                     <tr key={user.id}>
-                                        <td>{user.orgName}</td>
+                                        <td>
+                                            <Link to={`/dashboard/user/${user.id}`}>
+                                                {user.userName}
+                                            </Link>
+                                        </td>
                                         <td>{user.userName || ''}</td>
                                         <td>{user.email}</td>
                                         <td>{user.phoneNumber}</td>
@@ -106,6 +110,7 @@ export default function Dashboard() {
                                                     <td>
                                                         <span className={styles.blacklisted}>Blacklisted</span>
                                                     </td>
+
                                         }
                                         <td><MenuVerticalIcon className={styles.moreIcon} /></td>
                                     </tr>
