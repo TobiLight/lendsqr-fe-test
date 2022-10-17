@@ -16,4 +16,8 @@
 ```npm i```
 
 ### Project Structure
+- src
+-- app (contains redux store file)
+-- Components (contains reusable components and Layout)
+-- features (contains redux slices [actions and reducers])
 ![Project Structure](projstructure.PNG?raw=true "Project Structure")
