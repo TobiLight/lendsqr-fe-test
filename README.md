@@ -23,4 +23,5 @@
     - helpers (contains axios base)
     - Pages (contains active pages for this project)
     - Styles (contains global styles for the project)
-![Project Structure](projstructure.PNG?raw=true "Project Structure")
+
+- ![Project Structure](projstructure.PNG?raw=true "Project Structure")
