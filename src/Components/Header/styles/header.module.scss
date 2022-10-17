@@ -38,6 +38,11 @@
                 @include flex-gap(20px);
                 padding: 20px;
 
+                a {
+                    color: #545f7d;
+                    text-decoration: none;
+                }
+
                 .bellIcon {
                     width: 20px;
                     height: 20px;
@@ -48,6 +53,11 @@
                     align-items: center;
                     @include flex-gap(10px);
                     text-decoration: none;
+                    color: #545f7d;
+
+                    &:hover {
+                        color: #000;
+                    }
 
                     .avatar {
                         width: 35px;
@@ -498,6 +508,8 @@
 
             a {
                 font-size: 14px;
+                    color: #545f7d;
+                    text-decoration: none;
             }
 
             .bellIcon {
@@ -511,7 +523,10 @@
                 align-items: center;
                 cursor: pointer;
                 text-decoration: none;
-
+                color: #545f7d;
+                &:hover {
+                    color: #000;
+                }
                 .avatar {
                     width: 40px;
                     height: 40px;
