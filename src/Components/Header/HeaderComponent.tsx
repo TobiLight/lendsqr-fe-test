@@ -232,7 +232,7 @@ export const MobileHeader = (): JSX.Element => {
                 </div>
 
                 <div className={styles.right}>
-                    <div className={styles.avatarWrapper}>
+                    <Link to={`/dashboard/user/${user && user.id}`} className={styles.avatarWrapper}>
                         <div className={styles.avatar}>
                             <img src={user && user.profile?.avatar} alt="User Avatar" />
                         </div>
@@ -240,7 +240,7 @@ export const MobileHeader = (): JSX.Element => {
                             {user && <p>{user.profile?.firstName || ''}</p>}
                             <DropdownIconFilled className={styles.dropdownIconFilled} />
                         </div>
-                    </div>
+                    </Link>
                 </div>
             </nav>
             <nav className={styles.mobileMenu}>
@@ -276,7 +276,7 @@ export const Header = (): JSX.Element => {
                 <div className={styles.right}>
                     <Link to="#">Docs</Link>
                     <BellIcon className={styles.bellIcon} />
-                    <div className={styles.avatarWrapper}>
+                    <Link to={`/dashboard/user${user && user.id}`} className={styles.avatarWrapper}>
                         <div className={styles.avatar}>
                             <img src={user && user.profile?.avatar} alt="User Avatar" />
                         </div>
@@ -284,7 +284,7 @@ export const Header = (): JSX.Element => {
                             {user && <p>{user.profile?.firstName || ''}</p>}
                             <DropdownIconFilled className={styles.dropdownIconFilled} />
                         </div>
-                    </div>
+                    </Link>
                 </div>
             </nav>
         </header>
