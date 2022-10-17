@@ -999,8 +999,19 @@
                             padding: 15px 25px;
                             display: flex;
                             color: #21407d87;
-                            cursor: pointer;
                             @include flex-gap(12px);
+
+                            a {
+                                color: #21407d87;
+                                display: flex;
+                                align-items: center;
+                                @include flex-gap(10px);
+                                text-decoration: none;
+                                
+                                &:hover {
+                                    color:#213f7d;
+                                }
+                            }
 
                             .guarantorsIcon {
                                 width: 20px;
@@ -1056,8 +1067,19 @@
                             padding: 15px 25px;
                             display: flex;
                             color: #21407d87;
-                            cursor: pointer;
                             @include flex-gap(12px);
+
+                             a {
+                                color: #21407d87;
+                                display: flex;
+                                align-items: center;
+                                @include flex-gap(10px);
+                                text-decoration: none;
+                                
+                                &:hover {
+                                    color:#213f7d;
+                                }
+                            }
 
                             .organizationIcon {
                                 width: 20px;
@@ -1128,8 +1150,19 @@
                             padding: 15px 25px;
                             display: flex;
                             color: #21407d87;
-                            cursor: pointer;
                             @include flex-gap(12px);
+
+                             a {
+                                color: #21407d87;
+                                display: flex;
+                                align-items: center;
+                                @include flex-gap(10px);
+                                text-decoration: none;
+                                
+                                &:hover {
+                                    color:#213f7d;
+                                }
+                            }
 
                             .preferencesIcon,
                             .tireIcon,

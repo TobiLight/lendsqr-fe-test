@@ -46,10 +46,10 @@ export const SideNavigation = ({ styles }: { styles: { [key: string]: string } }
             <ul>
                 <li>
                     <Link to={'/switch-org'}>
-                    <BriefcaseIcon className={styles.briefcaseIcon} />
-                    <span>
-                        Switch Organization
-                        <DropDownIcon className={styles.dropdownIcon} />
+                        <BriefcaseIcon className={styles.briefcaseIcon} />
+                        <span>
+                            Switch Organization
+                            <DropDownIcon className={styles.dropdownIcon} />
                         </span>
                     </Link>
                 </li>
@@ -67,49 +67,49 @@ export const SideNavigation = ({ styles }: { styles: { [key: string]: string } }
                 <ul>
                     <li>
                         <Link to={'/dashboard/users'}>
-                        <UsersIcon className={styles.usersIcon} />
+                            <UsersIcon className={styles.usersIcon} />
                             Users
                         </Link>
                     </li>
                     <li>
                         <Link to={'/dashboard/users'}>
-                        <Guarantors className={styles.guarantorsIcon} />
+                            <Guarantors className={styles.guarantorsIcon} />
                             Guarantors
                         </Link>
                     </li>
                     <li>
                         <Link to={'/dashboard/users'}>
-                        <SackIcon className={styles.sackIcon} />
+                            <SackIcon className={styles.sackIcon} />
                             Loans
                         </Link>
                     </li>
                     <li>
                         <Link to={'/dashboard/users'}>
-                        <HandshakeIcon className={styles.handshakeIcon} />
+                            <HandshakeIcon className={styles.handshakeIcon} />
                             Decision Models
                         </Link>
                     </li>
                     <li>
                         <Link to={'/dashboard/users'}>
-                        <PiggyBankIcon className={styles.piggybankIcon} />
+                            <PiggyBankIcon className={styles.piggybankIcon} />
                             Savings
                         </Link>
                     </li>
                     <li>
                         <Link to={'/dashboard/users'}>
-                        <LoanSackIcon className={styles.loansackIcon} />
+                            <LoanSackIcon className={styles.loansackIcon} />
                             Loan Requests
                         </Link>
                     </li>
                     <li>
                         <Link to={'/dashboard/users'}>
-                        <UserCheckIcon className={styles.usercheckIcon} />
+                            <UserCheckIcon className={styles.usercheckIcon} />
                             Whitelist
                         </Link>
                     </li>
                     <li>
                         <Link to={'/dashboard/users'}>
-                        <UserTimesIcon className={styles.usertimesIcon} />
+                            <UserTimesIcon className={styles.usertimesIcon} />
                             Karma
                         </Link>
                     </li>
@@ -120,40 +120,58 @@ export const SideNavigation = ({ styles }: { styles: { [key: string]: string } }
                 <p>BUSINESSES</p>
                 <ul>
                     <li>
-                        <BriefcaseIcon2 className={styles.organizationIcon} />
-                        Organization
+                        <Link to={'/dashboard/users'}>
+                            <BriefcaseIcon2 className={styles.organizationIcon} />
+                            Organization
+                        </Link>
                     </li>
                     <li>
-                        <LoanSackIcon className={styles.loansackIcon} />
-                        Loan Products
+                        <Link to={'/dashboard/users'}>
+                            <LoanSackIcon className={styles.loansackIcon} />
+                            Loan Products
+                        </Link>
                     </li>
                     <li>
-                        <BankIcon className={styles.bankIcon} />
-                        Savings Products
+                        <Link to={'/dashboard/users'}>
+                            <BankIcon className={styles.bankIcon} />
+                            Savings Products
+                        </Link>
                     </li>
                     <li>
-                        <CoinsIcon className={styles.coinsIcon} />
-                        Fees and Charges
+                        <Link to={'/dashboard/users'}>
+                            <CoinsIcon className={styles.coinsIcon} />
+                            Fees and Charges
+                        </Link>
                     </li>
                     <li>
-                        <TransactionsIcon className={styles.transactionsIcon} />
-                        Transactions
+                        <Link to={'/dashboard/users'}>
+                            <TransactionsIcon className={styles.transactionsIcon} />
+                            Transactions
+                        </Link>
                     </li>
                     <li>
-                        <ServicesIcon className={styles.servicesIcon} />
-                        Services
+                        <Link to={'/dashboard/users'}>
+                            <ServicesIcon className={styles.servicesIcon} />
+                            Services
+                        </Link>
                     </li>
                     <li>
-                        <UserSettingsIcon className={styles.serviceaccountsIcon} />
-                        Service Accounts
+                        <Link to={'/dashboard/users'}>
+                            <UserSettingsIcon className={styles.serviceaccountsIcon} />
+                            Service Accounts
+                        </Link>
                     </li>
                     <li>
-                        <ScrollIcon className={styles.settlementsIcon} />
-                        Settlements
+                        <Link to={'/dashboard/users'}>
+                            <ScrollIcon className={styles.settlementsIcon} />
+                            Settlements
+                        </Link>
                     </li>
                     <li>
-                        <ChartIcon className={styles.reportsIcon} />
-                        Reports
+                        <Link to={'/dashboard/users'}>
+                            <ChartIcon className={styles.reportsIcon} />
+                            Reports
+                        </Link>
                     </li>
                 </ul>
             </div>
@@ -162,21 +180,29 @@ export const SideNavigation = ({ styles }: { styles: { [key: string]: string } }
                 <p>SETTINGS</p>
                 <ul>
                     <li>
-                        <SettingsIcon className={styles.preferencesIcon} />
-                        Preferences
+                        <Link to={'/dashboard/users'}>
+                            <SettingsIcon className={styles.preferencesIcon} />
+                            Preferences
+                        </Link>
                     </li>
                     <li>
-                        <PricingIcon className={styles.feesandpricingIcon} />
-                        Fees and Pricing
+                        <Link to={'/dashboard/users'}>
+                            <PricingIcon className={styles.feesandpricingIcon} />
+                            Fees and Pricing
+                        </Link>
                     </li>
                     <li>
-                        <ClipboardIcon className={styles.auditlogsIcon} />
-                        Audit Logs
+                        <Link to={'/dashboard/users'}>
+                            <ClipboardIcon className={styles.auditlogsIcon} />
+                            Audit Logs
+                        </Link>
                     </li>
 
                     <li>
-                        <TireIcon className={styles.tireIcon} />
-                        System Messages
+                        <Link to={'/dashboard/users'}>
+                            <TireIcon className={styles.tireIcon} />
+                            System Messages
+                        </Link>
                     </li>
 
                     <li onClick={() => {
