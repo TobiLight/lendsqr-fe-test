@@ -1,5 +1,7 @@
 @import "../../../Styles//abstracts//mixins";
 @import "./abstracts/mixins";
+@import "@fontsource/work-sans";
+
 
 @media only screen and (max-width: 900px) {
     .mobileHeaderContainer {
@@ -11,6 +13,7 @@
         top: 0;
         width: 100%;
         z-index: 3;
+        font-family: "Work Sans";
 
         .mobileHeader {
             display: flex;
@@ -407,6 +410,7 @@
     background-color: #fff;
     min-height: 75px;
     width: 100%;
+    font-family: "Work Sans";
 
     .header {
         display: flex;
