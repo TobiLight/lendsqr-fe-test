@@ -9,6 +9,7 @@
 
 ### Technologies Used
 - React - (UI & Logic)
+- React Router DOM (URL Routing)
 - Redux - (State Management)
 - Axios - (Data Fetching)
 - SCSS - (CSS)
