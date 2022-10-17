@@ -72,32 +72,46 @@ export const SideNavigation = ({ styles }: { styles: { [key: string]: string } }
                         </Link>
                     </li>
                     <li>
+                        <Link to={'/dashboard/users'}>
                         <Guarantors className={styles.guarantorsIcon} />
-                        Guarantors
+                            Guarantors
+                        </Link>
                     </li>
                     <li>
+                        <Link to={'/dashboard/users'}>
                         <SackIcon className={styles.sackIcon} />
-                        Loans
+                            Loans
+                        </Link>
                     </li>
                     <li>
+                        <Link to={'/dashboard/users'}>
                         <HandshakeIcon className={styles.handshakeIcon} />
-                        Decision Models
+                            Decision Models
+                        </Link>
                     </li>
                     <li>
+                        <Link to={'/dashboard/users'}>
                         <PiggyBankIcon className={styles.piggybankIcon} />
-                        Savings
+                            Savings
+                        </Link>
                     </li>
                     <li>
+                        <Link to={'/dashboard/users'}>
                         <LoanSackIcon className={styles.loansackIcon} />
-                        Loan Requests
+                            Loan Requests
+                        </Link>
                     </li>
                     <li>
+                        <Link to={'/dashboard/users'}>
                         <UserCheckIcon className={styles.usercheckIcon} />
-                        Whitelist
+                            Whitelist
+                        </Link>
                     </li>
                     <li>
+                        <Link to={'/dashboard/users'}>
                         <UserTimesIcon className={styles.usertimesIcon} />
-                        Karma
+                            Karma
+                        </Link>
                     </li>
                 </ul>
             </div>
