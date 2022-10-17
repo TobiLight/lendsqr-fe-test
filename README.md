@@ -6,11 +6,11 @@
 4. The page must be mobile responsive
 
 ### Technologies Used
-- React
-- Redux
-- Axios
-- SCSS
-- localforage
+- React - (UI & Logic)
+- Redux - (State Management)
+- Axios - (Data Fetching)
+- SCSS - (CSS)
+- localforage (LocalStorage, IndexDB or WebSQL)
 
 ### Install packages using
 ```npm i```
