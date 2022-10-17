@@ -16,4 +16,4 @@
 ```npm i```
 
 ### Project Structure
-![Employee data](projstructure.png?raw=true "Project Structure")
+![Project Structure](projstructure.PNG?raw=true "Project Structure")
