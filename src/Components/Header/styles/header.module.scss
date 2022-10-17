@@ -104,7 +104,12 @@
             background-color: #fff;
             @include flex-gap(15px);
 
-            .menuIcon {
+            a {
+                text-decoration: none;
+                color: #545f7d;
+            }
+
+            .menuIcon, .closeIcon {
                 width: 20px;
                 height: 20px;
                 cursor: pointer;

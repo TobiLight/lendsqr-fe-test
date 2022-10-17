@@ -30,6 +30,7 @@ import { useDispatch, useSelector } from "react-redux"
 import { UserType } from "../../helpers/types"
 import { logout } from "../../features/auth/authSlice"
 import localforage from "localforage"
+import { CloseIcon } from "../Icons/Close"
 
 export const SideNavigation = ({ styles }: { styles: { [key: string]: string } }): JSX.Element => {
     const dispatch = useDispatch()
@@ -246,7 +247,7 @@ export const MobileHeader = (): JSX.Element => {
             <nav className={styles.mobileMenu}>
                 <Link to="#">Docs</Link>
                 <BellIcon className={styles.bellIcon} />
-                <MenuIcon onClick={() => { setShowSideMenu(!showSideMenu) }} className={styles.menuIcon} />
+                {showSideMenu ? <CloseIcon onClick={() => { setShowSideMenu(false) }} className={styles.closeIcon} /> : <MenuIcon onClick={() => { setShowSideMenu(true) }} className={styles.menuIcon} />}
             </nav>
 
             {showSideMenu && <SideNavigation styles={styles} />}
