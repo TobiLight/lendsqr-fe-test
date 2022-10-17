@@ -12,7 +12,7 @@ export default function UserInfoComponent() {
     const { user } = useLoaderData() as { user: UserType }
     return (
         <main>
-            <Link to="#" className={styles.backLink}>
+            <Link to="/dashboard/users" className={styles.backLink}>
                 <BackButtonIcon className={styles.backBtnIcon} />
                 Back to users
             </Link>
