@@ -12,14 +12,23 @@
 - SCSS - (CSS)
 - localforage (LocalStorage, IndexDB or WebSQL)
 
+
+
+
 ### Install packages using
 ```npm i```
+
+
+
 
 ### Page URLs
 - / - landing page
 - /dashboard - loads dashboard with list of users
 - /users - (same as above)
 - /user/:userID - loads a single user information on the dashboard using the query parameter (userID)
+
+
+
 
 ### Project Structure
 - src
@@ -32,3 +41,9 @@
     - Routers.tsx (contains all the app routes)
 
 - ![Project Structure](projstructure.PNG?raw=true "Project Structure")
+
+
+
+
+### NOTE
+If you want to run the project on your local machine, you need to create a .env file and it should contain REACT_APP_APP_URL. For e.g. REACT_APP_API_URL = 'apiurlshouldbehere'
