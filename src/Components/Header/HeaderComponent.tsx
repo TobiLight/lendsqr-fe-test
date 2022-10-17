@@ -224,7 +224,7 @@ export const MobileHeader = (): JSX.Element => {
     const [showSideMenu, setShowSideMenu] = useState<boolean>(false)
     const { user } = useSelector<{ auth: UserType }>(state => state.auth) as { user: UserType }
 
-
+    console.log('user', user);
     return (
         <header className={styles.mobileHeaderContainer}>
             <nav className={styles.mobileHeader}>

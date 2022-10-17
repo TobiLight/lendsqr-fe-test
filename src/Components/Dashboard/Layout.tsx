@@ -6,6 +6,7 @@ import { UserType } from '../../helpers/types'
 import { Header, MobileHeader, SideNavigation } from '../Header/HeaderComponent'
 import styles from './styles/dashboard.module.scss'
 import { setUsers } from '../../features/user/usersSlice'
+import { setUser } from '../../features/auth/authSlice'
 
 
 export default function DashboardLayout() {
@@ -19,6 +20,7 @@ export default function DashboardLayout() {
             if (user === null) {
                 return navigate('/login', { replace: true })
             }
+            dispatch(setUser({ ...user }))
             dispatch(setUsers({ data: [...users] }))
             return
         }

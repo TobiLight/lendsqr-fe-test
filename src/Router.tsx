@@ -1,5 +1,5 @@
 import localforage from "localforage";
-import { createBrowserRouter, json } from "react-router-dom";
+import { createBrowserRouter, json, Link } from "react-router-dom";
 import DashboardLayout from "./Components/Dashboard/Layout";
 import httprequest from "./helpers/httprequest";
 import { UserType } from "./helpers/types";
@@ -80,6 +80,7 @@ const AppRouter = createBrowserRouter([
             }
         }
     },
+
     {
         path: '/dashboard',
         element: <DashboardLayout />,
@@ -104,6 +105,10 @@ const AppRouter = createBrowserRouter([
             {
                 path: 'user/:userID',
                 element: <UserInfoPage />,
+                errorElement: (
+                    <p>kjhg</p>
+                ),
+                hasErrorBoundary: true,
                 loader: async ({ params }) => {
                     const userID = params['userID']
                     try {
@@ -123,7 +128,13 @@ const AppRouter = createBrowserRouter([
                 }
             }
         ],
-    }
+    },
+    {
+        path: '/*',
+        element: (
+            <Link to="/">Go back</Link>
+        )
+    },
 ]);
 
 export default AppRouter
