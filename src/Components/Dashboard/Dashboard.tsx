@@ -29,7 +29,7 @@ const DashboardInfo = ({ className, icon, statsstyles, text, countstyles, count 
 export default function Dashboard() {
     const [showFilter, setShowFilter] = useState<boolean>()
     const data = useSelector(state => state) as { users: { data: UserType[] } }
-    console.log(data.users.data.length)
+
     return (
         <div className={styles.dashboardContainer}>
             <p style={{ marginBottom: 50 }}>Users</p>
@@ -81,24 +81,25 @@ export default function Dashboard() {
                             </tr>
                         </thead>
                         <tbody>
-                            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(user => {
+                            {data.users.data.slice(0, 11).map(user => {
+                                console.log(user);
                                 return (
-                                    <tr key={user}>
-                                        <td>Lendsqr</td>
-                                        <td>Adedeji</td>
-                                        <td>Adedeji@lendsqr.com</td>
-                                        <td>08078903721</td>
+                                    <tr key={user.id}>
+                                        <td>{user.orgName}</td>
+                                        <td>{user.userName || ''}</td>
+                                        <td>{user.email}</td>
+                                        <td>{user.phoneNumber}</td>
                                         <td>May 15, 2020 10:00 AM</td>
-                                        {user <= 3 ?
+                                        {Number(user.id) <= 3 ?
                                             <td>
                                                 <span className={styles.pending}>Pending</span>
                                             </td>
-                                            : user >= 4 && user <= 6 ?
+                                            : Number(user.id) >= 4 && Number(user.id) <= 6 ?
                                                 <td>
                                                     <span className={styles.inactive}>Inactive</span>
                                                 </td>
                                                 :
-                                                user % 3 !== 0 ?
+                                                Number(user.id) % 3 !== 0 ?
                                                     <td>
                                                         <span className={styles.active}>Active</span>
                                                     </td>

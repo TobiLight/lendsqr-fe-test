@@ -28,12 +28,6 @@ export default function DashboardLayout() {
         return
     }, [dispatch])
 
-    // useEffect(() => {
-    //     if (!isLoggedIn) {
-    //         return navigate('/login', { replace: true })
-    //     }
-    // }, [])
-
     return (
         <div className={styles.main}>
             <div className={styles.mobile}>

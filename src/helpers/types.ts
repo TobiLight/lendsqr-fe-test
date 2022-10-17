@@ -1,10 +1,12 @@
 export type UserType = {
     id?: string
     email: string
-    username?: string
+    userName?: string
     phoneNumber?: string
     orgName?: string
     accountBalance?: string
+    createdAt?: string
+    accountNumber?: string
     profile?: {
         firstName?: string
         lastName?: string

@@ -102,9 +102,10 @@ main {
         align-items: center;
         background-color: #21407d2d;
 
-        img {
+        img, .userAvatar {
             width: 100%;
             height: 100%;
+            border-radius: 50%;
             object-fit: cover;
         }
 

@@ -29,14 +29,15 @@ export default function UserInfoComponent() {
                     <div className={styles.userdetails}>
                         <div className={styles.userprofile}>
                             <div className={styles.userprofileImg}>
-                                {/* <img src={""} alt="Adeola's avatar" className={styles.userAvatar} /> */}
-                                <UserAvatarSampleIcon className={styles.defaultUserIcon} />
+                                {user.profile?.avatar ? <img src={user.profile?.avatar} alt="Adeola's avatar" className={styles.userAvatar} /> :
+                                    <UserAvatarSampleIcon className={styles.defaultUserIcon} />
+                                }
                             </div>
 
                             <div className={styles.userprofileInfo}>
                                 <div className={styles.userfullname}>
                                     <h3>{user.profile?.firstName} {user.profile?.lastName}</h3>
-                                    <p>{user.orgName}</p>
+                                    <p>{user.accountNumber}</p>
                                 </div>
 
                                 <div className={styles.userTier}>
