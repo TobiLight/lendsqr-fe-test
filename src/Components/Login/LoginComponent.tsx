@@ -27,14 +27,13 @@ export default function LoginComponent() {
                 return dispatch(setUsers({ data: [...data.users] }))
         }).catch(err => err)
 
-
-
         if (action && action.error) {
             setLoading(false)
             return setError(action.error)
         }
 
         if (action && action.user) {
+            setError(undefined)
             dispatch(login({ email: action.user.email }))
             dispatch(setUsers({ data: [...data.users] }))
             localforage.getItem<UserType & { isLoggedIn: boolean }>('user').then(user => {
@@ -44,7 +43,7 @@ export default function LoginComponent() {
             }).catch(err => err)
             // return navigate('/dashboard', { replace: true })
         }
-    }, [dispatch, action, loading])
+    }, [dispatch, action])
 
     return (
         <div className={styles.container}>
@@ -66,6 +65,7 @@ export default function LoginComponent() {
                         </div>
                         <Form method="post" action="/login" onSubmit={() => {
                             setLoading(true)
+                            setError(undefined)
                         }}>
                             {error && <p style={{ color: 'red', fontSize: 14, fontWeight: 600, marginBottom: 20 }}>{error}</p>}
                             <div className={styles.inputInfo}>

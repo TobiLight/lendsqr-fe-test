@@ -34,8 +34,6 @@ const AppRouter = createBrowserRouter([
             let email = form.get('email')
             let password = form.get('password') as string
 
-
-
             try {
                 const request: AxiosResponse<UserType[], any> = await httprequest.get('/users')
                 let user = request.data.filter(user => email === user.email)
@@ -43,7 +41,6 @@ const AppRouter = createBrowserRouter([
                 if (password.toLowerCase() !== 'admin') {
                     return json({ error: 'Invalid login details' }, { status: 400 })
                 }
-
                 if (user === null || !user[0]) {
                     return json({ error: 'Invalid login details' }, { status: 400 })
                 }
