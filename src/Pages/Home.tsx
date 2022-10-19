@@ -18,6 +18,7 @@ export default function Home(): JSX.Element {
         <div className="homepage">
             <h1>Hello World</h1>
             <span>Below are the designed pages. Navigate through any one of them</span>
+            <span>* <Link to="/" className="underline-wavy">Index</Link>
             <span>* <Link to="/login" className="underline-wavy">Login</Link>
             </span>
             <span>* <Link to="/dashboard" className="underline-wavy">Dashboard</Link>
