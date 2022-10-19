@@ -28,11 +28,6 @@ export default function LoginComponent() {
         }).catch(err => err)
 
 
-        localforage.getItem<UserType & { isLoggedIn: boolean }>('user').then(user => {
-            if (user?.isLoggedIn) {
-                return navigate('/dashboard')
-            }
-        }).catch(err => err)
 
         if (action && action.error) {
             setLoading(false)
@@ -42,9 +37,14 @@ export default function LoginComponent() {
         if (action && action.user) {
             dispatch(login({ email: action.user.email }))
             dispatch(setUsers({ data: [...data.users] }))
-            return navigate('/dashboard')
+            localforage.getItem<UserType & { isLoggedIn: boolean }>('user').then(user => {
+                if (user?.isLoggedIn) {
+                    return navigate('/dashboard', { replace: true })
+                }
+            }).catch(err => err)
+            // return navigate('/dashboard', { replace: true })
         }
-    }, [dispatch, action])
+    }, [dispatch, action, loading])
 
     return (
         <div className={styles.container}>

@@ -55,7 +55,7 @@ const AppRouter = createBrowserRouter([
                 }
 
                 return localforage.setItem('user', { ...user[0], isLoggedIn: true }).then(value => {
-                    return redirect('/dashboard')
+                    return json({ user: user[0] }, { status: 200 })
                 })
             } catch (err) {
                 return json({ error: err }, { status: 400 })
