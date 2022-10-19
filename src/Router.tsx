@@ -1,6 +1,6 @@
 import { AxiosResponse } from "axios";
 import localforage from "localforage";
-import { createBrowserRouter, json, Link, redirect } from "react-router-dom";
+import { createBrowserRouter, json, Link } from "react-router-dom";
 import DashboardLayout from "./Components/Dashboard/Layout";
 import httprequest from "./helpers/httprequest";
 import { UserType } from "./helpers/types";
@@ -63,8 +63,8 @@ const AppRouter = createBrowserRouter([
                 console.log('loading users')
                 const request = await httprequest.get('/users')
                 localforage.setItem('users', request.data)
-                console.log('users list retrieved')
                 console.log(request.data)
+                console.log('users list retrieved')
                 return json({ users: request.data })
             } catch (err: any) {
                 return json({ error: err.message }, { status: 400 })
