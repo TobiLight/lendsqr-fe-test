@@ -277,7 +277,7 @@ export const Header = (): JSX.Element => {
                 <div className={styles.right}>
                     <Link to="#">Docs</Link>
                     <BellIcon className={styles.bellIcon} />
-                    <Link to={`/dashboard/user${user && user.id}`} className={styles.avatarWrapper}>
+                    <Link to={`/dashboard/user/${user && user.id}`} className={styles.avatarWrapper}>
                         <div className={styles.avatar}>
                             <img src={user && user.profile?.avatar} alt="User Avatar" />
                         </div>
