@@ -136,6 +136,20 @@
             }
         }
 
+        .btnBusy {
+            background-color: #39cdcd8a;
+            font-size: 14px;
+            width: 100%;
+            font-weight: 600;
+            color: #fff;
+            padding: 10px 0;
+            margin-top: 45px;
+            cursor: pointer;
+            border-radius: 8px;
+            height: 48px;
+            cursor: not-allowed;
+          }
+
         @include screenbreakpoint("mobile") {
             .loginRight {
                 max-width: 500px;

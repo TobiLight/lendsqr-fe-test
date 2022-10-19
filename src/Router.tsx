@@ -1,5 +1,6 @@
+import { AxiosResponse } from "axios";
 import localforage from "localforage";
-import { createBrowserRouter, json, Link } from "react-router-dom";
+import { createBrowserRouter, json, Link, redirect } from "react-router-dom";
 import DashboardLayout from "./Components/Dashboard/Layout";
 import httprequest from "./helpers/httprequest";
 import { UserType } from "./helpers/types";
@@ -47,16 +48,15 @@ const AppRouter = createBrowserRouter([
             }
 
             try {
-                let users = await localforage.getItem('users') as Array<{ [key: string]: any }>
-                let user = users.filter(user => email === user.email)
+                const request: AxiosResponse<UserType[], any> = await httprequest.get('/users')
+                let user = request.data.filter(user => email === user.email)
                 if (user === null || !user[0]) {
                     return json({ error: 'Invalid login details' }, { status: 400 })
                 }
 
                 return localforage.setItem('user', { ...user[0], isLoggedIn: true }).then(value => {
-                    return json({ user: user[0] })
+                    return redirect('/dashboard')
                 })
-
             } catch (err) {
                 return json({ error: err }, { status: 400 })
             }

@@ -19,6 +19,7 @@ export default function LoginComponent() {
     let navigate = useNavigate()
     let dispatch = useDispatch()
     const data = useLoaderData() as { users: UserType[] }
+    const [loading, setLoading] = useState<boolean>(false)
 
     useEffect(() => {
         localforage.getItem<UserType[]>('users').then(users => {
@@ -34,6 +35,7 @@ export default function LoginComponent() {
         }).catch(err => err)
 
         if (action && action.error) {
+            setLoading(false)
             return setError(action.error)
         }
 
@@ -62,7 +64,9 @@ export default function LoginComponent() {
                             </h1>
                             <p>Enter details to login.</p>
                         </div>
-                        <Form method="post">
+                        <Form method="post" action="/login" onSubmit={() => {
+                            setLoading(true)
+                        }}>
                             {error && <p style={{ color: 'red', fontSize: 14, fontWeight: 600, marginBottom: 20 }}>{error}</p>}
                             <div className={styles.inputInfo}>
                                 <label htmlFor="email">
@@ -81,7 +85,7 @@ export default function LoginComponent() {
                                 </label>
                                 <Link to="/forgot-password">FORGOT PASSWORD?</Link>
                             </div>
-                            <Button btnText={'Login'} type={'submit'} className={styles.button} />
+                            <Button btnText={loading ? 'Please wait...' : 'Login'} type={'submit'} className={loading ? styles.btnBusy : styles.button} />
                         </Form>
                     </div>
                 </div>
