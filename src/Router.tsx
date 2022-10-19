@@ -22,16 +22,7 @@ const AppRouter = createBrowserRouter([
                 return json({ users })
             }
 
-            try {
-                console.log('loading users')
-                const request = await httprequest.get('/users')
-                localforage.setItem('users', request.data)
-                console.log('users list retrieved')
-                console.log(request.data)
-                return json({ users: request.data })
-            } catch (err: any) {
-                return json({ error: err.message }, { status: 400 })
-            }
+            return json({ message: 'Hello world!' })
         },
         element: <Home />,
     },
